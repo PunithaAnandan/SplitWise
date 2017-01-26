@@ -1,7 +1,7 @@
-Week-1                                     Hours
+Week-1                                   Hours
 week-0 setup                             2
 readings week-0                        1
-week-1 Maven Project                0.15
+week-1 Maven Project                   0.15
 week-1 Display Exercise             1
 Kids code Madison                     1.3
 
