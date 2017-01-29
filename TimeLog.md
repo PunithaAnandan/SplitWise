@@ -21,8 +21,7 @@
 | 1/26/17| Fillup Time Log | .20 | | 
 | 1/27/17| finish ListTest.java |.30 | |
 | 1/27/17| Drawn rough Screen design for individual project |2.30| |
-| 1/27/17| finish file open function in 
-            the SantaInAnElevator.java   |.15 | |
+| 1/27/17| finish file open function in he SantaInAnElevator.java   |.15 | |
 | 1/28/17| finish find floor method in SantaInAnElevator.java | 1.10 | |
 | 1/29/17| finish SantaInAnElevatorTest.java | .15 | |
 | 1/29/17| added screen shots for SantaInAnElevator.java| .5| |
