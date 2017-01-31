@@ -26,6 +26,8 @@
 | 1/29/17| finish SantaInAnElevatorTest.java | .15 | |
 | 1/29/17| added screen shots for SantaInAnElevator.java| .5| |
 | 1/29/17| fillup Timelog | .10| |
+| 1/30/17| Finished Screen Design | 3.00| |
+| 1/30/17| Uploaded in the Git and fill up the Time Log | .10| |
 
 
 
