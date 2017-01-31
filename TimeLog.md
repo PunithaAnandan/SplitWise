@@ -28,6 +28,8 @@
 | 1/29/17| fillup Timelog | .10| |
 | 1/30/17| Finished Screen Design | 3.00| |
 | 1/30/17| Uploaded in the Git and fill up the Time Log | .10| |
+| 1/31/17| Practising Log4j Quiz and read Log4j Interview Question| .25||
+| 1/31/17| Fill up Time Log| .5|| 
 
 
 
