@@ -31,6 +31,10 @@
 | 1/31/17| Practising Log4j Quiz and read Log4j Interview Question| .25| |
 | 1/31/17| Fill up Time Log| .5| |
 | 2/1/17 | Preparing PPt for upcoming presentation | 3| |
+| 2/2/17 | Preparing ppt for Angularjs| 1| |
+| 2/3/17 | Doing Week 3 activity | 2||
+| 2/4/17 | Adding logs for Week3 Exercise | .25 ||
+
 
 
 
