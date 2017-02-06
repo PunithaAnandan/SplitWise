@@ -14,8 +14,8 @@
 | 1/24/17| include Logger in week-1 Excercise  | .10 | |
 | 1/25/17| Referred Web worker video in youtube | .35 | |
 | 1/25/17| Get reference for Angular js   | .20 | |
-| 1/26/17| Preparing individual Project elevator pitch | 15 | |
-| 1/26/17| Preparing individual Project Problem solution | 15 | |
+| 1/26/17| Preparing individual Project elevator pitch | .15 | |
+| 1/26/17| Preparing individual Project Problem solution | .15 | |
 | 1/26/17| Kidscode Madison   | 1.30 | |
 | 1/26/17| Push week 1 exercise in the GitHub | 2.00 | |
 | 1/26/17| Fillup Time Log | .20 | | 
@@ -32,7 +32,7 @@
 | 1/31/17| Fill up Time Log| .5| |
 | 2/1/17 | Preparing PPt for upcoming presentation | 3| |
 | 2/2/17 | Preparing ppt for Angularjs| 1| |
-| 2/3/17 | Doing Week 3 activity | 2||
+| 2/3/17 | finished Week 3 activity | 2||
 | 2/4/17 | Adding logs for Week3 Exercise | .25 ||
 
 
