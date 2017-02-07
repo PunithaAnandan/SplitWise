@@ -4,4 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>MainMenuServlet</servlet-name>
+    <servlet-class>edu.matc.entity.MainMenuServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EnterExpensesServlet</servlet-name>
+    <servlet-class>edu.matc.entity.EnterExpensesServlet</servlet-class>
+  </servlet>
+
+  <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

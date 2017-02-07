@@ -34,6 +34,12 @@
 | 2/2/17 | Preparing ppt for Angularjs| 1| |
 | 2/3/17 | finished Week 3 activity | 2||
 | 2/4/17 | Adding logs for Week3 Exercise | .25 ||
+| 2/3/17 | Finished added test code for week 3 exercise | .15 | |
+| 2/4/17 | preparing ppt for upcoming presentation | .30 | |
+| 2/5/17 | Started individual project design |.5| |
+| 2/6/17 | Started reading for upcoming presentation |3| |
+| 2/7/17 | Timelog fill up | .15 | |
+
 
 
 
