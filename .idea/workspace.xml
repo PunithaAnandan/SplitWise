@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e092237-1fe4-48d2-b41b-d0c2b9dfbce4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mysplitwise.war" afterPath="$PROJECT_DIR$/target/mysplitwise.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SplitWise_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SplitWise_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SplitWise.iml" afterPath="$PROJECT_DIR$/SplitWise.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mysplitwise/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/mysplitwise/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/mysplitwise/index.jsp" afterPath="$PROJECT_DIR$/target/mysplitwise/index.jsp" />
-    </list>
+    <list default="true" id="2e092237-1fe4-48d2-b41b-d0c2b9dfbce4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -945,16 +933,16 @@
       <updated>1486344817040</updated>
       <workItem from="1486344818351" duration="13769000" />
       <workItem from="1486393852852" duration="11561000" />
-      <workItem from="1486431151537" duration="11730000" />
+      <workItem from="1486431151537" duration="11745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37060000" />
+    <option name="totallyTimeSpent" value="37075000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
-    <editor active="true" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
