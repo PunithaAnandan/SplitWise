@@ -20,11 +20,11 @@ more detail.
 - [X] Time log entries
 - [X] Add project to repository
 - [X] Add Hibernate config
-- [] Complete database design
-- [] Create DAO for user crud
 
 ### Week 4
 
+- [X] Complete all JSPs
+- [] Create DAO for user crud
 - [] Create database and all tables/columns locally
 - [] Create class diagram
 - [] Set up logging
@@ -32,8 +32,7 @@ more detail.
 - [] Add user login  
 - [] Add user registration
 - [] Time log entries
-- [ ] Add Maven for building
-- [] Add entities for remaining tables
+- [] Add Maven for building
 - [] Determine independent research topic
 
 ### Week 5

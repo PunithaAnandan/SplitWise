@@ -39,6 +39,7 @@
 | 2/5/17 | Started individual project design |.5| |
 | 2/6/17 | Started reading for upcoming presentation |3| |
 | 2/7/17 | Timelog fill up | .15 | |
+| 2/10/17 | Finished Code review for Individual Projects |.30| |
 
 
 
