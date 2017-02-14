@@ -24,7 +24,7 @@
         <table>
             <tr><td>User Name</td><td><input type="text" name="firstName" /></td></tr>
             <tr><td>Password</td><td><input type="password" name="password" /></td></tr>
-            <tr><td><input type="submit" name="" value="Sign In" /></td><td><input type="submit" name="" value="Sign Up" /></td></tr>
+            <tr><td>&nbsp;</td><td><input type="submit" name="" value="Sign In" /></td></tr>
         </table>
 
     </form>

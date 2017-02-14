@@ -6,11 +6,11 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>MainMenuServlet</servlet-name>
-    <servlet-class>edu.matc.entity.MainMenuServlet</servlet-class>
+    <servlet-class>edu.matc.controller.MainMenuServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>EnterExpensesServlet</servlet-name>
-    <servlet-class>edu.matc.entity.EnterExpensesServlet</servlet-class>
+    <servlet-class>edu.matc.controller.EnterExpensesServlet</servlet-class>
   </servlet>
 
   <welcome-file-list>

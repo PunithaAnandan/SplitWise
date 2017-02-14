@@ -1,2 +1,1 @@
-edu\matc\entity\EnterExpensesServlet.class
-edu\matc\entity\MainMenuServlet.class
+edu\matc\persistence\SessionFactoryProvider.class

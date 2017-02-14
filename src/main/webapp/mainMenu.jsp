@@ -16,18 +16,14 @@
 <c:import url="header.jsp" />
 
 
-<div id="content">
-    <p>
+<div id="content" align="center">
 
-    <ul>
-        <li><a href="/enterExpensesServlet">Enter your expenses</a></li>
-        <li><a href="viewExpense.jsp">View your expenses</a></li>
-        <li><a href="editExpense.jsp">Edit your expenses</a></li>
-        <li><a href="compareYearOrMonth.jsp">Compare your expenses</a></li>
-        <li><a href="viewProfile.jsp">View your expenses</a></li>
-    </ul>
-
-    <a href="main.jsp">Back to Home</a></li>
+    <br><h2><a href="/enterExpensesServlet">Enter your expenses</a></h2>
+    <br><h2><a href="viewExpense.jsp">View your expenses</a></h2>
+    <br><h2><a href="editExpense.jsp">Edit your expenses</a></h2>
+    <br><h2><a href="compareYearOrMonth.jsp">Compare your expenses</a></h2>
+    <br><h2><a href="viewProfile.jsp">View your expenses</a></h2>
+         <a href="main.jsp">Back to Home</a>
 </div>
 
 <c:import url="footer.jsp" />

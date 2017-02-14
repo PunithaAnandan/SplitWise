@@ -22,18 +22,18 @@ more detail.
 - [X] Add Hibernate config
 
 ### Week 4
-
+- [X] Complete AWS setup
 - [X] Complete all JSPs
-- [] Create DAO for user crud
-- [] Create database and all tables/columns locally
-- [] Create class diagram
-- [] Set up logging
-- [] Set up unit testing
-- [] Add user login  
-- [] Add user registration
+- [X] Create DAO for user crud
+- [X] Create database and all tables/columns locally
+- [X] Create class diagram
+- [X] Set up logging
+- [X] Set up unit testing
+- [X] Add user login  
+- [X] Add user registration
 - [] Time log entries
-- [] Add Maven for building
-- [] Determine independent research topic
+- [X] Add Maven for building
+
 
 ### Week 5
 
@@ -42,6 +42,7 @@ more detail.
 - [] Create DAO for expense
 - [] Create add expense report functionality
 - [] Create edit expense report functionality
+- [] Determine independent research topic
 
 ### Week 6
 - [ ] Time log entries
