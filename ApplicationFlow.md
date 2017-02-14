@@ -27,7 +27,7 @@ pages.  JDBCRealm used for authentication (users, users_roles, and roles table).
 1. viewExpense jsp displays the reports(when user select view expense from menu).
 
 ### View Expense
-
+1. User chooses View Expense on the menu (available on all pages).
 1. Page sends a request to view Expense servlet along with criteria 
 (Month or Year).
 1. Servlet uses the Expense dao to select expenses according to criteria.
@@ -40,6 +40,7 @@ is sent.
 
 ### Edit Expense
 
+1. User chooses Edit Expense on the menu (available on all pages).
 1. Page sends a request to edit Expense servlet along with criteria 
 (Month selected by user).
 1. Servlet uses the Expense dao to select expenses according to criteria.
@@ -52,16 +53,16 @@ is sent.
 
 ### Compare Expenses
 
+1. User chooses Compare Expense on the menu (available on all pages).
 1. Page sends a request to Compare Expenses servlet along with criteria 
 (Month/Year selected by user).
 1. Servlet uses the Expense dao to select expenses according to criteria.
 1. Dao performs select and creates expense objects from results.
 1. Dao returns list of expenses criteria to servlet.
 1. Servlet sends list back to View Expense jsp.
-1. View Expense jsp displays the expense.
+1. View Expense jsp displays the expenses in Chart.
 1. Consider paging results so page does not get super long and too much data 
 is sent.
-
 
 
 
