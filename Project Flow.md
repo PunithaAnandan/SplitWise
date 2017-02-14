@@ -62,29 +62,7 @@ is sent.
 1. Consider paging results so page does not get super long and too much data 
 is sent.
 
-### About
 
-1. Static page - html only? 
-1. Consider making contact info configurable.
-
-### Add Trail Report
-1. Option only available to logged in users with proper role
-1. User selects trail to report on
-1. User enters trail report details
-1. Details are sent to Add Trail Report servlet
-1. Servlet creates trail report object
-1. Servlet sends object to dao
-1. Dao adds report to the database
-1. Servlet sends confirmation to report page that report has been added.
-
-### Add Trail 
-1. Option only available to logged in users with proper role
-1. User enters trail  details
-1. Details are sent to Add Trail  servlet
-1. Servlet creates trail  object
-1. Servlet sends object to dao
-1. Dao adds trail to the database
-1. Servlet sends confirmation to trail page that trail has been added.
 
 
 
