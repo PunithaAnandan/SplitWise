@@ -40,6 +40,20 @@
 | 2/6/17 | Started reading for upcoming presentation |3| |
 | 2/7/17 | Timelog fill up | .15 | |
 | 2/10/17 | Finished Code review for Individual Projects |.30| |
+| 2/11/17 | Finished AWS setup 1 | 1| |
+| 2/12/17 | Finished AWS setup 2,3| 4| |
+| 2/12/17 | Edited Jsp's , added two more servlets in Individual Project| 1| |
+| 2/13/17 | Completed database creation in MySql | .15| |
+| 2/13/17 | Completed Project Flow | .45| |
+| 2/13/17 | Finished User DAO | 10| |
+| 2/13/17 | Finished AWS setup | .15 ||
+| 2/13/17 | Deploy Week1 Exercise in AWS | .10| |
+| 2/13/17 | Deploy Individual Project in AWS | .10| |
+| 2/13/17 | Added AWS Project Link | .5 ||
+| 2/13/17 | Updated Project Plan | .15 ||
+| 2/14/17 | Completed ERD | .5| |
+| 2/14/17 | TimeLog Fillup |.10| |
+
 
 
 
