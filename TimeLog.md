@@ -53,6 +53,17 @@
 | 2/13/17 | Updated Project Plan | .15 ||
 | 2/14/17 | Completed ERD | .5| |
 | 2/14/17 | TimeLog Fillup |.10| |
+| 2/16/17 | Added user_role table for Individual Project|.10| |
+| 2/16/17 | Added JDBC Realm in Individual Project|.30| |
+| 2/16/17 | Added Security constrain in Individual Project web.xml|.30| |
+| 2/16/17 | Added Expense entity in Individual Project|.25| |
+| 2/17/17 | created DAO for expense in Individual Project|.10| |
+| 2/20/17 | Finished servlet creation for editExpense, viewExpense, enterExpense jsp's in Individual Project | 3 | |
+| 2/20/17 | Added EnterExpense, ViewExpense servlet in web.xml |.5| |
+| 2/21/17 | TimeLog Fillup |.10| |
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+</div>
 <p>&nbsp;</p>
 <!-- javascript at the bottom for fast page loading -->
 <script type="text/javascript" src="js/jquery.js"></script>

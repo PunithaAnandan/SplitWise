@@ -31,15 +31,18 @@ more detail.
 - [X] Set up unit testing
 - [X] Add user login  
 - [X] Add user registration
-- [] Time log entries
 - [X] Add Maven for building
+- [X] Deploy application to AWS
+- [X] Time log entries
 
 
 ### Week 5
-
-- [ ] Time log entries
+- [X] Create user_role table
+- [X] Create DAO for expense
+- [X] Add entities for remaining tables
+- [X] Set up authentication 
+- [X] Time log entries
 - [] Add unit tests for DAO
-- [] Create DAO for expense
 - [] Create add expense report functionality
 - [] Create edit expense report functionality
 - [] Determine independent research topic

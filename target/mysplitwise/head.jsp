@@ -1,6 +1,6 @@
 
 <head>
-    <title>CSS3_six</title>
+    <title>SplitWise</title>
     <meta name="description" content="website description" />
     <meta name="keywords" content="website keywords, website keywords" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />

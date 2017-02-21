@@ -24,7 +24,9 @@ public class EnterExpensesServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        log.info("SignIn Servlet doGet method start");
+        log.info("EnterExpense Servlet doGet method start");
+
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/enterExpenses.jsp");
         dispatcher.forward(request, response);
     }

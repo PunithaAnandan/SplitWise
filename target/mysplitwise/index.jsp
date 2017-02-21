@@ -16,24 +16,25 @@
     <header>
         <div id="logo">
             <div id="logo_text">
-                <!-- class="logo_six", allows you to change the colour of the text -->
                 <h1><a href="index.jsp">SplitWise<span class="logo_six"></span></a></h1>
-                <h2>Simple. Contemporary. Website Template.</h2>
+                <h2>Save past for the future</h2>
             </div>
+        </div>
             <nav>
                 <div id="menu_container">
                     <ul class="sf-menu" id="nav">
                         <li><a href="index.jsp">Home</a></li>
                         <li><a href="showSignUpServlet">Sign Up</a></li>
                         <li><a href="signInServlet">Sign In</a></li>
-                        <li><a href="enterExpensesServlet">Enter Expenses</a></li>
-                        <li><a href="viewExpensesServlet">View Expense</a></li>
-                        <li><a href="editExpensesServlet">Edit Expense</a></li>
+                        <li><a href="showEnterExpenseServlet">Enter Expenses</a></li>
+                        <li><a href="showViewExpensesServlet">View Expense</a></li>
+                        <li><a href="showEditExpenseServlet">Edit Expense</a></li>
                         <li><a href="compareExpensesServlet">Compare Expense</a></li>
+                        <li><a href="signOutServlet">Sign out</a></li>
                     </ul>
                 </div>
             </nav>
-        </div>
+
     </header>
     <div id="site_content">
            <h3>Problem Statement:</h3>

@@ -20,7 +20,7 @@
 <div id="content" align="center">
     <p>
     <h3>Select option</h3>
-    <form>
+    <form action="CompareExpensesServlet">
         <table>
             <tr><td>Month</td><td><input type="radio" name="button" value="Month" checked>Month
                 <input type="radio" name="button" value="Year">Year</td></tr>
