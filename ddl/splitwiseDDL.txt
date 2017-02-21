@@ -1,0 +1,28 @@
+expense:
+
+CREATE TABLE `expenses` (
+  `expenses` varchar(45) NOT NULL,
+  `amount` float DEFAULT NULL,
+  `due_date` date DEFAULT NULL,
+  `paid_date` date DEFAULT NULL,
+  PRIMARY KEY (`expenses`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+user_roles:
+
+CREATE TABLE `user_roles` (
+  `user_name` varchar(15) NOT NULL,
+  `role_name` varchar(15) NOT NULL,
+  PRIMARY KEY (`user_name`,`role_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+users:
+
+CREATE TABLE `users` (
+  `user_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_Name` varchar(45) DEFAULT NULL,
+  `last_Name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `email_Id` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`user_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
