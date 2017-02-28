@@ -1,6 +1,10 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.User;
 import org.junit.Before;
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertTrue;
 
 /**
  * Created on 9/13/16.
@@ -16,19 +20,9 @@ public class UserDaoTest {
         dao = new UserDao();
     }
 
-       /*@Test
+    @Test
     public void getUser() throws Exception {
-        User user=dao.getUser(1);
-        assertTrue(user.getUserId()==1);
-    }*/
-
-   /* @Test
-    public void addUser() throws Exception {
-         User user = new User();
-        user.setFirstName("Harry");
-        user.setLastName("Ryen");
-        assertTrue(dao.addUser(user)>0);
-    }*/
-
-
+        User user = dao.getUser(47);
+        assertTrue(user.getLastName().equalsIgnoreCase("ram"));
+    }
 }

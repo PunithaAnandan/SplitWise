@@ -2,6 +2,7 @@ package edu.matc.persistence;
 
 import edu.matc.entity.User;
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -21,11 +22,43 @@ public class UserDao {
      */
     public int addUser(User user) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        int id = (int)session.save(user);
-        transaction.commit();
+        Transaction transaction = null;
+        int id = 0;
+        try {
+            transaction = session.beginTransaction();
+            id = (int)session.save(user);
+            transaction.commit();
+
+        }catch (HibernateException hibernateException) {
+            if (transaction!=null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        }finally {
+            session.close();
+        }
         return id;
     }
 
+    /** Get a single user for the given id
+     *
+     * @param id user's id
+     * @return User
+     */
+    public User getUser(int id) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        User user = null;
+        try {
+            transaction = session.beginTransaction();
+            user = (User) session.get(User.class, id);
+            transaction.commit();
+
+        }catch (HibernateException hibernateException) {
+            if (transaction!=null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        }finally {
+            session.close();
+        }
+        return user;
+    }
 }
 

@@ -18,12 +18,16 @@
 <p>
 <div id="content" align="center">
 
-    <h3>Enter</h3>
-    <form>
+    <h3>Select</h3>
+    <form action="viewExpensesServlet" method="post">
         <table>
-            <tr><td>Select month :</td><td><input type="date" name="month" /></td></tr>
-            <tr><td><input type="submit" name="" value="view" /></td><td><input type="submit" name="" value="Back to Menu" /></td></tr>
+            <tr><td>Select month :</td><td><label>
+                <input type="date" name="month"/>
+            </label></td></tr>
         </table>
+        <div>
+            <tr><td>&nbsp;</td><td><input type="submit" name="submit"/></td></tr>
+        </div>
 
     </form>
 

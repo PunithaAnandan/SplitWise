@@ -11,7 +11,6 @@
             <ul class="sf-menu" id="nav">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="showSignUpServlet">Sign Up</a></li>
-                <li><a href="signInServlet">Sign In</a></li>
                 <li><a href="showEnterExpenseServlet">Enter Expenses</a></li>
                 <li><a href="showViewExpensesServlet">View Expense</a></li>
                 <li><a href="showEditExpenseServlet">Edit Expense</a></li>

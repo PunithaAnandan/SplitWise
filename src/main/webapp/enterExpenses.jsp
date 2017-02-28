@@ -30,6 +30,8 @@
 
 <c:import url="head.jsp" />
 
+<c:import url="head.jsp" />
+
 <body>
 
 <c:import url="header.jsp" />
@@ -37,24 +39,22 @@
 <div id="content" align="center">
     <p>
     <h3>Enter your expense</h3>
-    <form>
-        <table border="1" width="500">
-            <tr><th>Your Expense</th><th>Amount</th><th>Due Date</th><th>Paid Date</th></tr>
-            <tr><td>Electricity Bill</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Phone Bill</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Internet Bill</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Credit Card1</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Credit Card2</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Credit Card3</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Insurance1</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Insurance2</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
-            <tr><td>Insurance3</td><td><input type="number" name="amount" value="amount" /><td><input type="date" name="date1" /></td><td><input type="date" name="date1" /></td></tr>
+    <form action="/addExpenseServlet" method="post">
+        <table class="table table-hover">
+
+            <tr><td>Expense Name</td><td><input type="text" name="expense" /></td></tr>
+            <tr><td>Amount</td><td><input type="number" name="amount" /></td></tr>
+            <tr><td>Due Date</td><td><input type="DATE" name="dueDate" /></td></tr>
+            <tr><td>Paid Date</td><td><input type="date" name="paidDate" /></td></tr>
         </table>
         <div>
-            <td><input type="submit" name="" value="Back to Home" /></td><td>&nbsp;</td><td><input type="submit" name="" value="submit" /></td>
+            <table>
+                <tr><td><input type="submit" name="" value="Add More" /></tr>
+            </table>
         </div>
 
     </form>
+    <a href="index.jsp">Back to Home</a>
 
 </div>
 
