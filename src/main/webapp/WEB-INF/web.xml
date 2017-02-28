@@ -26,18 +26,7 @@
 
     </security-constraint>
 
-    <security-constraint>
 
-        <web-resource-collection>
-            <web-resource-name>admin</web-resource-name>
-            <url-pattern>/showAdminServlet</url-pattern>
-        </web-resource-collection>
-
-        <auth-constraint>
-            <role-name>administrator</role-name>
-        </auth-constraint>
-
-    </security-constraint>
 
     <security-role>
         <role-name>registered-user</role-name>
@@ -55,4 +44,8 @@
         </form-login-config>
     </login-config>
 
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/j_security_check</url-pattern>
+    </servlet-mapping>
 </web-app>

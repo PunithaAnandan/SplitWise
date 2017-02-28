@@ -69,13 +69,16 @@ public class ExpensesDao {
      * @param expenseName  The name of Expense
      * @return expenses
      */
-    public Expenses getExpense(String expenseName) {
+    public Expenses getExpense(String emailId, String expenseName) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         Expenses expenses = null;
+        Expenses inputExpenses = new Expenses();
         try {
             transaction = session.beginTransaction();
-            expenses = (Expenses) session.get(Expenses.class, expenseName);
+            inputExpenses.setEmail_Id(emailId);
+            inputExpenses.setExpense_name(expenseName);
+            expenses = (Expenses) session.get(Expenses.class, inputExpenses);
             transaction.commit();
 
         }catch (HibernateException hibernateException) {

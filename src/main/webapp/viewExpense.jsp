@@ -17,7 +17,9 @@
 
 <p>
 <div id="content" align="center">
-
+<%
+//String emailId = (String) request.getSession().getAttribute("j_username");
+%>
     <h3>Select</h3>
     <form action="viewExpensesServlet" method="post">
         <table>

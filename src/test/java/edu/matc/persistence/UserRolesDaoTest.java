@@ -22,7 +22,7 @@ public class UserRolesDaoTest {
 
     @Test
     public void getUserRoles() throws Exception {
-        UserRoles userRoles = userRolesDao.getUserRoles("jagan@gmail.com");
+        UserRoles userRoles = userRolesDao.getUserRoles("anand@gmail.com");
         assertTrue(userRoles.getRoleName().equals("registered-user"));
     }
 }

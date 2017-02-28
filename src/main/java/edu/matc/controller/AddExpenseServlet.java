@@ -44,6 +44,7 @@ public class AddExpenseServlet extends HttpServlet {
         Expenses expenses = new Expenses();
         ExpensesDao expenseDao = new ExpensesDao();
         //out.println("start");
+        String email_Id = request.getParameter("emailId");
         String expense_name = request.getParameter("expense");
         //out.println("expense_name:"+expense_name);
         double amount_due = Double.parseDouble(request.getParameter("amount"));
@@ -52,6 +53,7 @@ public class AddExpenseServlet extends HttpServlet {
         //out.println("dueDate:"+dueDate);
         String paidDate = request.getParameter("paidDate");
         //out.println("paidDate:"+paidDate);
+        expenses.setEmail_Id(email_Id);
         expenses.setExpense_name(expense_name);
         expenses.setAmount_due(amount_due);
         expenses.setDueDate(dueDate);

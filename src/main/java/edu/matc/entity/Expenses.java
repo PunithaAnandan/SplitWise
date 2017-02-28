@@ -1,6 +1,7 @@
 package edu.matc.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Punitha Anandan on 2/20/2017.
@@ -8,7 +9,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "expenses")
-public class Expenses {
+public class Expenses implements Serializable{
+
+    @Id
+    @Column(name = "email_Id")
+    private String email_Id;
 
     @Id
     @Column(name = "expense")
@@ -32,18 +37,27 @@ public class Expenses {
 
     /**This is the constructor
      *
+     * @param email_Id
      * @param expense_name
      * @param amount_due
      * @param dueDate
      * @param paidDate
      */
-    public Expenses(String expense_name, double amount_due, String dueDate, String paidDate) {
+    public Expenses(String email_Id, String expense_name, double amount_due, String dueDate, String paidDate) {
+        this.email_Id = email_Id;
         this.expense_name = expense_name;
         this.amount_due = amount_due;
         this.dueDate = dueDate;
         this.paidDate = paidDate;
     }
 
+    public String getEmail_Id() {
+        return email_Id;
+    }
+
+    public void setEmail_Id(String email_Id) {
+        this.email_Id = email_Id;
+    }
 
     public String getExpense_name() {
         return expense_name;

@@ -21,6 +21,7 @@ public class ShowViewExpensesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("showViewExpenses Servlet doGet method start");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/viewExpense.jsp");
+       // request.getSession().setAttribute("j_username",request.getAttribute("j_username"));
         dispatcher.forward(request, response);
     }
 }

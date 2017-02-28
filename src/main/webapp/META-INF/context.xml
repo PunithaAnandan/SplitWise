@@ -1,0 +1,8 @@
+
+<Context docBase="mysplitwise" path="/mysplitwise" reloadable="true">
+<Realm className="org.apache.catalina.realm.JDBCRealm"
+       driverName="com.mysql.jdbc.Driver"
+       connectionURL="jdbc:mysql://localhost:3306/splitwise?user=root&amp;password=student"
+       userTable="users" userNameCol="email_Id" userCredCol="password"
+       userRoleTable="user_roles" roleNameCol="role_name"/>
+</Context>

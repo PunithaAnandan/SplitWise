@@ -19,8 +19,8 @@ public class ExpensesDaoTest {
 
     @Test
     public void getExpense() throws Exception {
-        Expenses expenses = expensesDao.getExpense("Gas");
-        assertTrue(expenses.getDueDate().equals("2017-02-15"));
+        Expenses expenses = expensesDao.getExpense("anand@gmail.com","bus pass");
+        assertTrue(expenses.getDueDate().equals("2017-02-24"));
     }
 
 

@@ -42,6 +42,7 @@
     <form action="/addExpenseServlet" method="post">
         <table class="table table-hover">
 
+            <tr><td>Email-ID</td><td><input type="text" name="emailId" /></td></tr>
             <tr><td>Expense Name</td><td><input type="text" name="expense" /></td></tr>
             <tr><td>Amount</td><td><input type="number" name="amount" /></td></tr>
             <tr><td>Due Date</td><td><input type="DATE" name="dueDate" /></td></tr>

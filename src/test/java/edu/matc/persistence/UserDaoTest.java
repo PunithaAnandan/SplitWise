@@ -22,7 +22,7 @@ public class UserDaoTest {
 
     @Test
     public void getUser() throws Exception {
-        User user = dao.getUser(47);
-        assertTrue(user.getLastName().equalsIgnoreCase("ram"));
+        User user = dao.getUser(1);
+        assertTrue(user.getLastName().equalsIgnoreCase("sundaram"));
     }
 }
