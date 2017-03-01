@@ -19,7 +19,7 @@
 
 <div id="content" align="center">
 
-    <form action="/j_security_check" method="POST">
+    <form action="j_security_check" method="POST">
         <table>
             <tr><td>Email-Id</td><td><input type="text" name="j_username" /></td></tr>
             <tr><td>Password</td><td><input type="password" name="j_password" /></td></tr>

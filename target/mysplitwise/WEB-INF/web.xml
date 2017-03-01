@@ -44,8 +44,4 @@
         </form-login-config>
     </login-config>
 
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/j_security_check</url-pattern>
-    </servlet-mapping>
 </web-app>

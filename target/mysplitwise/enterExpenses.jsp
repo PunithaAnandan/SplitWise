@@ -39,7 +39,7 @@
 <div id="content" align="center">
     <p>
     <h3>Enter your expense</h3>
-    <form action="/addExpenseServlet" method="post">
+    <form action="addExpenseServlet" method="post">
         <table class="table table-hover">
 
             <tr><td>Email-ID</td><td><input type="text" name="emailId" /></td></tr>
