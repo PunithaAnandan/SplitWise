@@ -61,6 +61,7 @@
 | 2/20/17 | Finished servlet creation for editExpense, viewExpense, enterExpense jsp's in Individual Project | 3 | |
 | 2/20/17 | Added EnterExpense, ViewExpense servlet in web.xml |.5| |
 | 2/21/17 | TimeLog Fillup |.10| |
+| 3/2/17  | Added extracurricular feedback | .25| |
 
 
 
