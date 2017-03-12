@@ -53,12 +53,11 @@ more detail.
 
 ### Week 7
 - [x] Time log entries
-- [ ] Add search functionality
 
 ### Week 8
-- [ ] Time log entries
-- [ ] Implement paging of search results
-- [ ] Code review
+- [X] Time log entries
+- [X] Implement paging of search results
+- [X] Code review
 
 ### Week 9
 - [] Time log entries
