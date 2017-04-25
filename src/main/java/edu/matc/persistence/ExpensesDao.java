@@ -57,11 +57,6 @@ public class ExpensesDao {
             criteria.add(Restrictions.le("dueDate", date));
             criteria.add(Restrictions.eq("emailId", emailId));
             expensesList = criteria.list();
-            /**Criteria cr = session.createCriteria(Employee.class);
-             cr.add(Restrictions.eq("salary", 2000));
-             List results = cr.list();*/
-            // query = "from Expenses where due_date <=:sDate and email_Id =:sEmailId";
-            //expensesList = (ArrayList<Expenses>) session.createQuery(query).setString("sDate",date,"sEmailId",emailId).list();
             transaction.commit();
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
@@ -132,6 +127,25 @@ public class ExpensesDao {
             session.close();
         }
         return result;
+    }
+
+    /** delete Expense
+     *
+     * @param expense
+     */
+    public void deleteExpense(Expenses expense) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.delete(expense);
+            transaction.commit();
+        } catch (HibernateException hibernateException) {
+            if (transaction != null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        } finally {
+            session.close();
+        }
     }
 }
 

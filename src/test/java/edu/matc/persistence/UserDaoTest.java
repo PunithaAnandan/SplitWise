@@ -23,7 +23,7 @@ public class UserDaoTest {
     }
 
     @Test
-    public void addUser() throws Exception {
+    public void addUserTest() throws Exception {
         user.setFirstName("Raj");
         user.setLastName("Ram");
         user.setEmailId("ram@gmail.com");
@@ -32,15 +32,24 @@ public class UserDaoTest {
     }
 
     @Test
-    public void getUser() throws Exception {
+    public void getUserTest() throws Exception {
         User user = userDao.getUser(7);
         assertTrue(user.getLastName().equalsIgnoreCase("Ram"));
     }
 
 
     @Test
-    public void getUserByEmailId() throws Exception {
+    public void getUserByEmailIdTest() throws Exception {
+        User user = userDao.getUserByEmailId("ram@gmail.com");
+        assertTrue(user.getLastName().equalsIgnoreCase("Ram"));
 
+    }
+
+    @Test
+    public void deleteUserTest() throws Exception {
+        user.setUserId(9);
+        userDao.deleteUser(user);
+        assertTrue("User still in the DB",user.getUserId()==9);
     }
 
 

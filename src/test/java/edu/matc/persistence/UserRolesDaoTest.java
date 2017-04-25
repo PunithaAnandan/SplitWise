@@ -12,25 +12,26 @@ import static junit.framework.TestCase.assertTrue;
  * @author pwaite
  */
 public class UserRolesDaoTest {
-    @Test
-    public void addUserRole() throws Exception {
-
-    }
-
-    @Test
-    public void getUserRoles1() throws Exception {
-
-    }
 
     UserRolesDao userRolesDao;
+    UserRoles userRoles;
 
     @Before
     public void setup() {
         userRolesDao = new UserRolesDao();
+        userRoles = new UserRoles();
     }
 
     @Test
-    public void getUserRoles() throws Exception {
+    public void addUserRoleTest() throws Exception {
+        userRoles.setEmailId("test@gmail.com");
+        userRoles.setRoleName("registered-user");
+        userRolesDao.addUserRole(userRoles);
+        assertTrue(userRoles.getRoleName().equals("registered-user"));
+    }
+
+    @Test
+    public void getUserRolesTest() throws Exception {
         UserRoles userRoles = userRolesDao.getUserRoles("anand@gmail.com");
         assertTrue(userRoles.getRoleName().equals("registered-user"));
     }

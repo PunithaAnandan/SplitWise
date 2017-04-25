@@ -2,15 +2,19 @@ package edu.matc.persistence;
 
 import edu.matc.entity.Expenses;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.List;
+
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Punitha Anandan on 2/26/2017.
  */
 public class ExpensesDaoTest {
+
+
     ExpensesDao expensesDao;
     Expenses expenses;
 
@@ -21,7 +25,6 @@ public class ExpensesDaoTest {
     }
 
     @Test
-    @Ignore
     public void addExpenseTest() throws Exception {
         expenses.setEmailId("ram@gmail.com");
         expenses.setExpenseName("Credit Card1");
@@ -29,31 +32,35 @@ public class ExpensesDaoTest {
         expenses.setDueDate("2017-04-17");
         expenses.setPaidDate("2017-04-21");
         assertTrue(expensesDao.addExpense(expenses)>0);
-
     }
 
     @Test
-    public void getExpense() throws Exception {
+    public void getExpenseTest() throws Exception {
         Expenses expenses = expensesDao.getExpense("ram@gmail.com","Credit Card1");
         assertTrue(expenses.getDueDate().equals("2017-04-17"));
     }
 
 
-
-
     @Test
-    public void viewExpense() throws Exception {
-
+    public void viewExpenseTest() throws Exception {
+        List<Expenses> expensesList = null;
+        expensesList = expensesDao.viewExpense("2017-04-17","ram@gmail.com");
+        assertEquals(1, expensesList.size());
     }
 
     @Test
-    public void getExpense1() throws Exception {
-
+    public void updateExpensesTest() throws Exception {
+        expenses.setAmountDue(702);
+        expenses.setExpenseName("Credit Card1");
+        expensesDao.updateExpenses(expenses,"Credit Card1","2017-04-17");
+        assertTrue("Expense not updated",expenses.getAmountDue()==702);
     }
 
     @Test
-    public void updateExpenses() throws Exception {
-
+    public void deleteExpenseTest() throws Exception {
+        expenses.setEmailId("ton@gmail.com");
+        expensesDao.deleteExpense(expenses);
+        assertTrue("Expense still in the DB",expenses.getEmailId().equals("ton@gmail.com"));
     }
 
 

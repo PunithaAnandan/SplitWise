@@ -91,5 +91,47 @@ public class UserDao {
         }
         return user;
     }
+
+
+    /**
+     * delete a user
+     * @param id
+     */
+    public void deleteUser(int id) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        User user = null;
+        try {
+            transaction = session.beginTransaction();
+            user.setUserId(id);
+            session.delete(user);
+            transaction.commit();
+        } catch (HibernateException hibernateException) {
+            if (transaction != null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        } finally {
+            session.close();
+        }
+    }
+
+
+    /**
+     * delete a user
+     * @param user
+     */
+    public void deleteUser(User user) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.delete(user);
+            transaction.commit();
+        } catch (HibernateException hibernateException) {
+            if (transaction != null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        } finally {
+            session.close();
+        }
+    }
 }
 
