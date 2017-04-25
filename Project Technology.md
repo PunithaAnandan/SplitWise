@@ -17,4 +17,4 @@
 * Unit Testing
 	* JUnit tests to achieve 80% code coverage
 * Independent Research Topic
-	* Struts Validator
+	* Struts 

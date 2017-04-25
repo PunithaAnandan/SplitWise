@@ -60,30 +60,30 @@ more detail.
 - [X] Code review
 
 ### Week 9
-- [] Time log entries
+- [X] Time log entries
 
 ### Week 10
-- [] Time log entries
+- [X] Time log entries
 
 ### Week 11
-- [] Time log entries
+- [X] Time log entries
 
 ### Week 12
-- [ ] Time log entries
+- [X] Time log entries
 
 ### Week 13
-- [] Time log entries
+- [X] Time log entries
 
 ### Week 14
-- [ ] Time log entries
-- [ ] Create final presentation
+- [X] Time log entries
+- [X] Create final presentation
 
 ### Week 15
-- [ ] Final Presentation
-- [ ] Time log entries
+- [] Time log entries
 
 ### Week 16
 - [ ] Time log entries
+- [ ] Final Presentation
 
 
 
