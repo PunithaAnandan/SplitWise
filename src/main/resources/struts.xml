@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.convention.result.path" value="/"></constant>
+
+    <package name="splitwise" namespace="/" extends="struts-default" >
+
+        <interceptors>
+            <interceptor name="authentication"
+                         class="edu.matc.interceptors.AuthenticationInterceptor"></interceptor>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="authentication"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="authStack"></default-interceptor-ref>
+
+        <global-results>
+            <result name="login" type="redirect">/home.action</result>
+            <result name="error">/Error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
+
+        <action name="home">
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result>/signIn.jsp</result>
+        </action>
+
+        <action name="login" class="edu.matc.action.LoginAction">
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success">/index.jsp</result>
+            <result name="input">/failedSignIn.jsp</result>
+        </action>
+
+        <action name="showSignUpAction"
+                class="edu.matc.action.ShowSignUpAction">
+            <result name="success">/userSignUp.jsp</result>
+        </action>
+        <action name="signUpAction"
+                class="edu.matc.action.SignUpAction" method="execute">
+            <result name="success">/success.jsp</result>
+            <result name="input">/userSignUp.jsp</result>
+        </action>
+
+        <action name="showEnterExpensesAction"
+                class="edu.matc.action.ShowEnterExpensesAction">
+            <result name="success">/enterExpenses.jsp</result>
+        </action>
+        <action name="enterExpensesAction"
+                class="edu.matc.action.EnterExpensesAction" method="execute">
+            <result name="success">/enterExpensesSuccess.jsp</result>
+            <result name="input">/enterExpenses.jsp</result>
+        </action>
+
+        <action name="showViewExpensesAction"
+                class="edu.matc.action.ShowViewExpensesAction">
+            <result name="success">/viewExpense.jsp</result>
+        </action>
+        <action name="viewExpensesAction"
+                class="edu.matc.action.ViewExpensesAction" method="execute">
+            <result name="success">/viewExpenseList.jsp</result>
+            <result name="input">/viewExpenses.jsp</result>
+        </action>
+
+        <action name="showEditExpensesAction"
+                class="edu.matc.action.ShowEditExpensesAction">
+            <result name="success">/editExpense.jsp</result>
+        </action>
+        <action name="editExpensesAction"
+                class="edu.matc.action.EditExpensesAction" method="execute">
+            <result name="success">/editSelectedExpense.jsp</result>
+        </action>
+        <action name="editSelectedExpensesAction"
+                class="edu.matc.action.EditSelectedExpensesAction" method="execute">
+            <result name="success">/enterExpensesSuccess.jsp</result>
+            <result name="input">/editSelectedExpense.jsp</result>
+        </action>
+
+        <action name="compareExpensesAction"
+                class="edu.matc.action.CompareExpensesAction">
+            <result name="success">/compareYearOrMonth.jsp</result>
+        </action>
+        <action name="signOutAction" class="edu.matc.action.SignOutAction" method="execute">
+            <result name="success" >/logoutsuccess.jsp</result>
+        </action>
+
+
+
+        <!--<action name="index">
+            <result>/index.jsp</result>
+        </action>
+        <action name="showEnterExpensesAction"
+                class="edu.matc.action.ShowEnterExpensesAction"
+                method="execute">
+            <result name="success">/enterExpenses.jsp</result>
+        </action>-->
+
+    </package>
+
+</struts>

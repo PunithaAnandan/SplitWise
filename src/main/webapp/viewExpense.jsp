@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <c:import url="head.jsp" />
 
@@ -15,24 +16,12 @@
 
 <c:import url="header.jsp" />
 
-<p>
 <div id="content" align="center">
-<%
-//String emailId = (String) request.getSession().getAttribute("j_username");
-%>
-    <h3>Select</h3>
-    <form action="viewExpensesServlet" method="post">
-        <table>
-            <tr><td>Select month :</td><td><label>
-                <input type="date" name="month"/>
-            </label></td></tr>
-        </table>
-        <div>
-            <tr><td>&nbsp;</td><td><input type="submit" name="submit"/></td></tr>
-        </div>
-
-    </form>
-
+    <p>
+        <s:form action="viewExpensesAction" method="post">
+            <s:textfield label="Select month you wish to view :" name="expenses.dueDate" type="date"/>
+            <s:submit />
+        </s:form>
 </div>
 <c:import url="footer.jsp" />
 

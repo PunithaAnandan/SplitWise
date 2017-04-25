@@ -12,6 +12,15 @@ import static junit.framework.TestCase.assertTrue;
  * @author pwaite
  */
 public class UserRolesDaoTest {
+    @Test
+    public void addUserRole() throws Exception {
+
+    }
+
+    @Test
+    public void getUserRoles1() throws Exception {
+
+    }
 
     UserRolesDao userRolesDao;
 

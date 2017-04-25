@@ -1,2 +1,3 @@
 edu\matc\persistence\ExpensesDaoTest.class
+edu\matc\persistence\UserDaoTest.class
 edu\matc\persistence\UserRolesDaoTest.class

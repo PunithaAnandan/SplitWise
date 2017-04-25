@@ -13,14 +13,14 @@ public class Expenses implements Serializable{
 
     @Id
     @Column(name = "email_Id")
-    private String email_Id;
+    private String emailId;
 
     @Id
     @Column(name = "expense")
-    private String expense_name;
+    private String expenseName;
 
     @Column(name = "amount")
-    private double amount_due;
+    private double amountDue;
 
     @Column(name = "due_date")
     private String dueDate;
@@ -37,42 +37,42 @@ public class Expenses implements Serializable{
 
     /**This is the constructor
      *
-     * @param email_Id
-     * @param expense_name
-     * @param amount_due
+     * @param emailId
+     * @param expenseName
+     * @param amountDue
      * @param dueDate
      * @param paidDate
      */
-    public Expenses(String email_Id, String expense_name, double amount_due, String dueDate, String paidDate) {
-        this.email_Id = email_Id;
-        this.expense_name = expense_name;
-        this.amount_due = amount_due;
+    public Expenses(String emailId, String expenseName, double amountDue, String dueDate, String paidDate) {
+        this.emailId = emailId;
+        this.expenseName = expenseName;
+        this.amountDue = amountDue;
         this.dueDate = dueDate;
         this.paidDate = paidDate;
     }
 
-    public String getEmail_Id() {
-        return email_Id;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setEmail_Id(String email_Id) {
-        this.email_Id = email_Id;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
-    public String getExpense_name() {
-        return expense_name;
+    public String getExpenseName() {
+        return expenseName;
     }
 
-    public void setExpense_name(String expense_name) {
-        this.expense_name = expense_name;
+    public void setExpenseName(String expenseName) {
+        this.expenseName = expenseName;
     }
 
-    public double getAmount_due() {
-        return amount_due;
+    public double getAmountDue() {
+        return amountDue;
     }
 
-    public void setAmount_due(double amount_due) {
-        this.amount_due = amount_due;
+    public void setAmountDue(double amountDue) {
+        this.amountDue = amountDue;
     }
 
     public String getDueDate() {
@@ -94,8 +94,9 @@ public class Expenses implements Serializable{
     @Override
     public String toString() {
         return "Expense{" +
-                "expense_name='" + expense_name + '\'' +
-                ", amount_due=" + amount_due +
+                " emailId='" + emailId + '\'' +
+                " expenseName='" + expenseName + '\'' +
+                ", amountDue=" + amountDue +
                 ", dueDate='" + dueDate + '\'' +
                 ", paidDate='" + paidDate + '\'' +
                 '}';

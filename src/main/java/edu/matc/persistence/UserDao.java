@@ -6,6 +6,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by paulawaite on 2/2/16.
  */
@@ -52,6 +55,34 @@ public class UserDao {
             user = (User) session.get(User.class, id);
             transaction.commit();
 
+        }catch (HibernateException hibernateException) {
+            if (transaction!=null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        }finally {
+            session.close();
+        }
+        return user;
+    }
+
+    /** Get a single user for the given email id
+     *
+     * @param emailId user's email id
+     * @return User
+     */
+    public User getUserByEmailId(String emailId) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        User user = null;
+        String query = null;
+        List<User> userList = new ArrayList<User>();
+        try {
+            transaction = session.beginTransaction();
+            query = "from User where emailId =:sEmailId";
+            userList = (ArrayList<User>) session.createQuery(query).setString("sEmailId",emailId).list();
+            transaction.commit();
+            if(userList.size()>0){
+                user=(User)userList.get(0);
+            }
         }catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);

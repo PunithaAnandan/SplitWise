@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <c:import url="head.jsp" />
 
 <body>
@@ -18,22 +18,19 @@
 <c:import url="header.jsp" />
 
 <div id="content" align="center">
-
-    <form action="j_security_check" method="POST">
-        <table>
-            <tr><td>Email-Id</td><td><input type="text" name="j_username" /></td></tr>
-            <tr><td>Password</td><td><input type="password" name="j_password" /></td></tr>
-            <tr><td>&nbsp;</td><td><input type="submit" name="" value="Sign In" /></td></tr>
-        </table>
-
-    </form>
-
+    <p>
+    <s:form action="login" method="POST">
+        <s:textfield name="emailId" label="Email-Id"/>
+        <s:password name="password" label="Password"/>
+        <s:submit value="Sign In" />
+    </s:form>
+    </p>
 </div>
 
 
 <c:import url="footer.jsp" />
 
 </body>
-</html>
+
 
 

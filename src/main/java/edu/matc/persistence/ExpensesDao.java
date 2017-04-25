@@ -2,9 +2,8 @@ package edu.matc.persistence;
 
 import edu.matc.entity.Expenses;
 import org.apache.log4j.Logger;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,20 +20,23 @@ public class ExpensesDao {
      *
      * @param expenses
      */
-    public void addExpense(Expenses expenses) {
+    public int addExpense(Expenses expenses) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
+        int id = 0;
         try {
             transaction = session.beginTransaction();
             session.save(expenses);
             transaction.commit();
+            id=1;
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-            System.out.println("Hibernate Exception:" + hibernateException.getStackTrace());
+            //System.out.println("Hibernate Exception:" + hibernateException.getStackTrace());
         } finally {
             session.close();
         }
+        return id;
     }
 
     /**
@@ -43,15 +45,23 @@ public class ExpensesDao {
      * @param date
      * @return expensesList
      */
-    public List<Expenses> viewExpense(String date) {
+    public List<Expenses> viewExpense(String date,String emailId) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
+        Criteria criteria = null;
         String query = null;
         List<Expenses> expensesList = new ArrayList<Expenses>();
         try {
             transaction = session.beginTransaction();
-            query = "from Expenses where due_date <=:sDate";
-            expensesList = (ArrayList<Expenses>) session.createQuery(query).setString("sDate",date).list();
+            criteria = session.createCriteria(Expenses.class);
+            criteria.add(Restrictions.le("dueDate", date));
+            criteria.add(Restrictions.eq("emailId", emailId));
+            expensesList = criteria.list();
+            /**Criteria cr = session.createCriteria(Employee.class);
+             cr.add(Restrictions.eq("salary", 2000));
+             List results = cr.list();*/
+            // query = "from Expenses where due_date <=:sDate and email_Id =:sEmailId";
+            //expensesList = (ArrayList<Expenses>) session.createQuery(query).setString("sDate",date,"sEmailId",emailId).list();
             transaction.commit();
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
@@ -76,8 +86,8 @@ public class ExpensesDao {
         Expenses inputExpenses = new Expenses();
         try {
             transaction = session.beginTransaction();
-            inputExpenses.setEmail_Id(emailId);
-            inputExpenses.setExpense_name(expenseName);
+            inputExpenses.setEmailId(emailId);
+            inputExpenses.setExpenseName(expenseName);
             expenses = (Expenses) session.get(Expenses.class, inputExpenses);
             transaction.commit();
 
@@ -88,6 +98,40 @@ public class ExpensesDao {
             session.close();
         }
         return expenses;
+    }
+
+    /** Update the expenses
+     *
+     * @param expenses
+     * @param oldExpenseName
+     * @param oldDueDate
+     * @return result
+     */
+    public int updateExpenses(Expenses expenses, String oldExpenseName, String oldDueDate) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        int result =0;
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createSQLQuery("update Expenses " +
+                    "set expense = :expenseName, due_date = :dueDate, amount = :amtDue, paid_date = :paidDate"
+                    + " where email_Id = :emailId and expense = :oldExpenseName and due_date = :oldDueDate");
+            query.setParameter("emailId", expenses.getEmailId());
+            query.setParameter("oldExpenseName", oldExpenseName);
+            query.setParameter("oldDueDate", oldDueDate);
+            query.setParameter("expenseName", expenses.getExpenseName());
+            query.setParameter("dueDate", expenses.getDueDate());
+            query.setParameter("amtDue", expenses.getAmountDue());
+            query.setParameter("paidDate", expenses.getPaidDate());
+            result = query.executeUpdate();
+            transaction.commit();
+        }catch (HibernateException hibernateException) {
+            if (transaction!=null) transaction.rollback();
+            log.error("Hibernate Exception", hibernateException);
+        }finally {
+            session.close();
+        }
+        return result;
     }
 }
 

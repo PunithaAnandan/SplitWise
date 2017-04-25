@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <c:import url="head.jsp" />
 
@@ -10,18 +11,27 @@
 
 
 <div id="content" align="center">
+    <p>
+        <s:form action="signUpAction" >
+            <s:bean name="edu.matc.entity.User" var="user">
+                <s:textfield name="firstName" label="First Name"  type="text"  size="45" />
+                <s:textfield  name="lastName" label="Last Name" type="text" size="45" />
+                <s:password name="password" label="Enter password" type="password"  size="15" />
+                <s:textfield name="emailId" label="E-Mail ID" type="email" size="45" />
+                <s:submit />
+            </s:bean>
 
-    <form action="signUpServlet">
-        <table>
-            <tr><td>First Name</td><td><input type="text" name="firstName" /></td></tr>
-            <tr><td>Last Name</td><td><input type="text" name="lastName" /></td></tr>
-            <tr><td>Enter password</td><td><input type="password" name="password" /></td></tr>
-            <tr><td>E-Mail ID</td><td><input type="email" name="emailId" /></td></tr>
-            <tr><td>&nbsp;</td><td><input type="submit" value="submit" ></td></tr>
-        </table>
-
-    </form>
+        </s:form>
+    </p>
 
 </div>
+
+<c:import url="footer.jsp" />
 </body>
+
+<style>
+    table, tr, th, td {
+        border: .1em solid black;
+    }
+</style>
 

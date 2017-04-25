@@ -13,16 +13,35 @@ import static junit.framework.TestCase.assertTrue;
  */
 public class UserDaoTest {
 
-    UserDao dao;
+    UserDao userDao;
+    User user;
 
     @Before
     public void setup() {
-        dao = new UserDao();
+        userDao = new UserDao();
+        user = new User();
+    }
+
+    @Test
+    public void addUser() throws Exception {
+        user.setFirstName("Raj");
+        user.setLastName("Ram");
+        user.setEmailId("ram@gmail.com");
+        user.setPassword("ram");
+        assertTrue(userDao.addUser(user)>0);
     }
 
     @Test
     public void getUser() throws Exception {
-        User user = dao.getUser(1);
-        assertTrue(user.getLastName().equalsIgnoreCase("sundaram"));
+        User user = userDao.getUser(7);
+        assertTrue(user.getLastName().equalsIgnoreCase("Ram"));
     }
+
+
+    @Test
+    public void getUserByEmailId() throws Exception {
+
+    }
+
+
 }

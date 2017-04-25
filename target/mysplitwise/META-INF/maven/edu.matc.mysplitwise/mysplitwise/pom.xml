@@ -33,6 +33,24 @@
       <version>4.3.11.Final</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-core</artifactId>
+      <version>2.5.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.jgeppert.struts2.jquery</groupId>
+      <artifactId>struts2-jquery-chart-plugin</artifactId>
+      <version>4.0.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ca.jimr</groupId>
+      <artifactId>gae-mini-profiler</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/log4j/log4j -->
     <dependency>
