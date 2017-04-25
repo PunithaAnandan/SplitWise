@@ -62,6 +62,17 @@
 | 2/20/17 | Added EnterExpense, ViewExpense servlet in web.xml |.5| |
 | 2/21/17 | TimeLog Fillup |.10| |
 | 3/2/17  | Added extracurricular feedback | .25| |
+| 3/8/17  | pulled team project repository | .5| |
+| 3/9/17  | Added DAOs for team project  | 1| |
+| 3/9/17  | finished peers code review partially  | 1| |
+| 3/10/17 | Added TestDAOs for team project  | .45| |
+| 3/11/17 | Created branch for team project | .20| |
+| 3/11/17 | pushed DAOs and TestDAOs for team project| .25| |
+| 3/11/17 | finished peers code review for susan | 1| |
+| 3/12/17 | finished peers code review for peter | 2| |
+| 3/12/17 | Added feedback for extracurricular presentation |.10| |
+| 3/12/17 | TimeLog Fillup |.10 |
+
 
 
 

@@ -42,23 +42,22 @@ more detail.
 - [X] Add entities for remaining tables
 - [X] Set up authentication 
 - [X] Time log entries
-- [] Add unit tests for DAO
-- [] Create add expense report functionality
-- [] Create edit expense report functionality
-- [] Determine independent research topic
+- [x] Add unit tests for DAO
+- [x] Create add expense report functionality
+- [x] Create view expense report functionality
+- [x] Determine independent research topic
 
 ### Week 6
-- [ ] Time log entries
-- [ ] Create display expense report functionality
+- [x] Time log entries
+- [x] Create display expense report functionality
 
 ### Week 7
-- [] Time log entries
-- [ ] Add search functionality
+- [x] Time log entries
 
 ### Week 8
-- [ ] Time log entries
-- [ ] Implement paging of search results
-- [ ] Code review
+- [X] Time log entries
+- [X] Implement paging of search results
+- [X] Code review
 
 ### Week 9
 - [] Time log entries
