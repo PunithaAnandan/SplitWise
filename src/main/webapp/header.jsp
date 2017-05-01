@@ -15,9 +15,9 @@
                     <li><s:a href="showSignUpAction">Sign Up</s:a></li>
                 </s:if>
                 <li><s:a href="showEnterExpensesAction">Enter Expenses</s:a></li>
-                <li><s:a href="showViewExpensesAction">View Expense</s:a></li>
-                <li><s:a href="showEditExpensesAction">Edit Expense</s:a></li>
-                <li><a href="viewExpenseChart.jsp">Summary</a></li>
+                <li><s:a href="showViewExpensesAction">View/Edit Expense</s:a></li>
+                <li><s:a href="showDeleteExpensesAction">Delete Expense</s:a></li>
+                <li><a href="viewExpenseChart.jsp">SummaryofExpenses</a></li>
                 <s:if test="#session.USER!=null">
                     <li><s:a href="signOutAction">Sign out</s:a></li>
                 </s:if>

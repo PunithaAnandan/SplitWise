@@ -14,7 +14,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class ExpensesDaoTest {
 
-
     ExpensesDao expensesDao;
     Expenses expenses;
 

@@ -89,6 +89,17 @@
                 class="edu.matc.action.CompareExpensesAction">
             <result name="success">/compareYearOrMonth.jsp</result>
         </action>
+
+        <action name="showDeleteExpensesAction"
+                class="edu.matc.action.ShowDeleteExpensesAction">
+            <result name="success">/deleteExpense.jsp</result>
+        </action>
+        <action name="deleteExpensesAction"
+                class="edu.matc.action.DeleteExpensesAction">
+            <result name="success">/deleteExpensesSuccess.jsp</result>
+            <result name="input">/deleteExpense.jsp</result>
+        </action>
+
         <action name="signOutAction" class="edu.matc.action.SignOutAction" method="execute">
             <result name="success" >/logoutsuccess.jsp</result>
         </action>

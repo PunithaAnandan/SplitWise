@@ -128,6 +128,11 @@ public class SignUpAction extends ActionSupport {
             addFieldError("emailId","The Email Id is required");
         }
 
+        if (password == null || password.trim().equals(""))
+        {
+            addFieldError("password","The Password Id is required");
+        }
+
     }
 
 }

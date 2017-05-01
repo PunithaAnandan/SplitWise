@@ -11,7 +11,7 @@
 
 <div id="content" align="center">
    <p>
-      <h2>Welcome, <s:property value="firstName"/></h2>
+      <h2>Thanks for signing up</h2>
 
 </div>
 <c:import url="footer.jsp" />
