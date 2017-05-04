@@ -15,13 +15,13 @@
 <body>
 
 <c:import url="header.jsp" />
-
 <div id="content" align="center">
     <p>
-        <s:form action="viewExpensesAction" method="post">
-            <s:textfield label="Select month you wish to view :" name="expenses.dueDate" type="date"/>
-            <s:submit />
-        </s:form>
+        <h3>View Or Edit your expenses</h3>
+    <s:form action="viewExpensesAction" method="post">
+        <s:textfield label="Select Due date you wish to view :" name="expenses.dueDate" type="date"/>
+        <s:submit value="View"/>
+    </s:form>
 </div>
 <c:import url="footer.jsp" />
 

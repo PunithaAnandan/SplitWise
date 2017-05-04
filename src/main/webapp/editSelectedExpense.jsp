@@ -15,23 +15,18 @@
 <body>
 
 <c:import url="header.jsp" />
-
 <div id="content" align="center">
     <p>
     <h3>Edit your expense</h3>
     <s:form action="editSelectedExpensesAction">
-        <tr>
-            <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
-            <s:textfield label="Amount" type="number" name="expenses.amountDue" />
-            <s:textfield label="Due Date" type="date" name="expenses.dueDate" />
-            <s:textfield label="Paid Date" type="date" name="expenses.paidDate" />
-            <s:hidden name="expenseName" value="%{expenses.expenseName}" />
-            <s:hidden name="dueDate" value="%{expenses.dueDate}" />
-        </tr>
-            <tr>
-                <s:submit label="Update" />
-            </tr>
-      </s:form>
+        <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
+        <s:textfield label="Amount" type="number" name="expenses.amountDue" />
+        <s:textfield label="Due Date" type="date" name="expenses.dueDate" />
+        <s:textfield label="Paid Date" type="date" name="expenses.paidDate" />
+        <s:hidden name="expenseName" value="%{expenses.expenseName}" />
+        <s:hidden name="dueDate" value="%{expenses.dueDate}" />
+        <s:submit value="Edit" />
+    </s:form>
 </div>
 
 <c:import url="footer.jsp" />

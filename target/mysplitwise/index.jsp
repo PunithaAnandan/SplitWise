@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>CSS3_six</title>
+    <title>SplitWise</title>
     <meta name="description" content="website description" />
     <meta name="keywords" content="website keywords, website keywords" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -28,10 +28,11 @@
                         <s:if test="#session.USER==null">
                             <li><s:a href="showSignUpAction">Sign Up</s:a></li>
                         </s:if>
-                        <li><s:a href="showEnterExpensesAction">Enter Expenses</s:a></li>
+                        <li><s:a href="showEnterExpensesAction">Add Expenses</s:a></li>
                         <li><s:a href="showViewExpensesAction">View/Edit Expense</s:a></li>
                         <li><s:a href="showDeleteExpensesAction">Delete Expense</s:a></li>
-                        <li><a href="viewExpenseChart.jsp">Summary Of Expense</a></li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
                         <s:if test="#session.USER!=null">
                             <li><s:a href="signOutAction">Sign out</s:a></li>
                         </s:if>

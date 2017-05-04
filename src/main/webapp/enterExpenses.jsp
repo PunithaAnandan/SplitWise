@@ -15,23 +15,16 @@
 <body>
 
 <c:import url="header.jsp" />
-
 <div id="content" align="center">
     <p>
-    <h3>Enter your expense</h3>
+    <h3>Enter your expenses</h3>
     <s:form action="enterExpensesAction">
-        <table>
-            <tr>
-                <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
-                <s:textfield label="Amount" type="number" name="expenses.amountDue" />
-                <s:textfield label="Due Date" type="date" name="expenses.dueDate" />
-                <s:textfield label="Paid Date" type="date" name="expenses.paidDate" />
-                <s:textfield label="Add" type="submit" />
-            </tr>
-        </table>
+        <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
+        <s:textfield label="Amount" type="number" name="expenses.amountDue" />
+        <s:textfield label="Due Date" type="date" name="expenses.dueDate" />
+        <s:textfield label="Paid Date" type="date" name="expenses.paidDate" />
+        <s:submit value="Add" />
     </s:form>
-
-
 </div>
 
 <c:import url="footer.jsp" />

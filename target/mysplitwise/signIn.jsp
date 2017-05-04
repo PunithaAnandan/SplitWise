@@ -16,15 +16,15 @@
 <body>
 
 <c:import url="header.jsp" />
-
-<div id="content" align="center">
+<div id="menu_container" class="container">
     <p>
-    <s:form action="login" method="POST">
-        <s:textfield name="emailId" label="Email-Id"/>
-        <s:password name="password" label="Password"/>
-        <s:submit value="Sign In" />
-    </s:form>
-    </p>
+    <div align="center">
+        <s:form action="login" method="POST">
+            <s:textfield name="emailId" label="Email-Id"/>
+            <s:password name="password" label="Password"/>
+            <s:submit value="Sign In" />
+        </s:form>
+    </div>
 </div>
 
 

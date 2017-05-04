@@ -14,15 +14,12 @@
 <body>
 
 <c:import url="header.jsp" />
-
 <div id="content" align="center">
     <p>
-    <h3>Edit Expense</h3>
+    <h3>Tell us about you</h3>
     <s:form action="editExpensesAction">
-        <tr>
-            <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
-            <s:submit label="Edit" />
-        </tr>
+       <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
+       <s:submit value="Edit" />
     </s:form>
 </div>
 <c:import url="footer.jsp" />

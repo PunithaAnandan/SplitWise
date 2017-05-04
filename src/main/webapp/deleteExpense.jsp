@@ -17,9 +17,8 @@
 <body>
 
 <c:import url="header.jsp" />
-
-<p>
 <div id="content" align="center">
+    <p>
     <h3>Delete your expense</h3>
         <s:form action="deleteExpensesAction">
             <table class="table table-hover">
