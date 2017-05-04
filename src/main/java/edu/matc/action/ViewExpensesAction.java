@@ -1,7 +1,6 @@
 package edu.matc.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import edu.matc.entity.Expenses;
 import edu.matc.entity.User;
 import edu.matc.interceptors.UserAware;
@@ -13,29 +12,12 @@ import java.util.List;
 /**
  * Created by Punitha Anandan on 3/6/2017.
  */
-public class ViewExpensesAction extends ActionSupport implements UserAware, ModelDriven<User> {
+public class ViewExpensesAction extends ActionSupport implements UserAware {
     private final Logger log = Logger.getLogger(this.getClass());
     private static final long serialVersionUID = 1L;
     private Expenses expenses;
     private User user;
     private List<Expenses> expensesList;
-
-    /** Execute Method
-     *
-     * @return SUCCESS
-     * @throws Exception
-     */
-    @Override
-    public String execute() throws Exception {
-        log.info("ViewExpensesAction.execute");
-        log.info("ViewExpensesAction.execute emailId:" + user.getEmailId());
-        log.info("ViewExpensesAction.execute expenses.getDueDate():" + expenses.getDueDate());
-        ExpensesDao expensesDao = new ExpensesDao();
-        expenses.setEmailId(user.getEmailId());
-        expensesList = expensesDao.viewExpense(expenses.getDueDate(), expenses.getEmailId());
-        return SUCCESS;
-    }
-
 
     /**get Expenses
      *
@@ -69,6 +51,28 @@ public class ViewExpensesAction extends ActionSupport implements UserAware, Mode
         this.expensesList = expensesList;
     }
 
+
+
+
+
+    /** Execute Method
+     *
+     * @return SUCCESS
+     * @throws Exception
+     */
+    @Override
+    public String execute() throws Exception {
+        log.info("ViewExpensesAction.execute");
+        log.info("ViewExpensesAction.execute emailId:" + user.getEmailId());
+        log.info("ViewExpensesAction.execute expenses.getDueDate():" + expenses.getDueDate());
+        ExpensesDao expensesDao = new ExpensesDao();
+        expenses.setEmailId(user.getEmailId());
+        expensesList = expensesDao.viewExpense(expenses.getDueDate(), expenses.getEmailId());
+        return SUCCESS;
+    }
+
+
+
     /** Execute Method
      *
      * @return SUCCESS
@@ -77,8 +81,10 @@ public class ViewExpensesAction extends ActionSupport implements UserAware, Mode
     @Override
     public void validate()
     {
-        if (expenses.getDueDate() == null || expenses.getDueDate().trim().equals(""))
+        log.info("ViewExpensesAction.validate"+ expenses.getDueDate());
+        if (expenses.getDueDate() == null || expenses.getDueDate().trim().equals(" "))
         {
+            log.info("ViewExpensesAction.validate statement starts");
             addFieldError("expenses.dueDate","Due Date is required");
         }
     }
@@ -92,21 +98,4 @@ public class ViewExpensesAction extends ActionSupport implements UserAware, Mode
         this.user=user;
     }
 
-    /**get User
-     *
-     * @param user
-     * @return user
-     */
-    public User getUser(User user){
-        return this.user;
     }
-
-    /**get Model
-     *
-     * @return user
-     */
-    @Override
-    public User getModel() {
-        return this.user;
-    }
-}

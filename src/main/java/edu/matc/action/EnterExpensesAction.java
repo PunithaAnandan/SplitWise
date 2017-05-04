@@ -50,7 +50,7 @@ public class EnterExpensesAction extends ActionSupport implements UserAware{
     @Override
     public void validate()
     {
-        System.out.println("EnterExpensesAction.validate");
+        log.info("EnterExpensesAction.validate" + expenses.getDueDate());
         if (expenses.getExpenseName() == null || expenses.getExpenseName().trim().equals(""))
         {
             addFieldError("expenses.expenseName","The expense Name is required");
