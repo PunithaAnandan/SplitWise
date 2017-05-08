@@ -106,7 +106,7 @@ public class ExpensesDao {
         int result =0;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createSQLQuery("update Expenses " +
+            Query query = session.createSQLQuery("update expenses " +
                     "set expense = :expenseName, due_date = :dueDate, amount = :amtDue, paid_date = :paidDate"
                     + " where email_Id = :emailId and expense = :oldExpenseName and due_date = :oldDueDate");
             query.setParameter("emailId", expenses.getEmailId());
@@ -141,7 +141,7 @@ public class ExpensesDao {
         int result =0;
         try {
             transaction = session.beginTransaction();
-            query = session.createSQLQuery("delete from Expenses " +
+            query = session.createSQLQuery("delete from expenses " +
                     " where email_Id = :emailId and expense = :expenseName and due_date = :dueDate ");
             query.setParameter("emailId", expenses.getEmailId());
             query.setParameter("expenseName", expenses.getExpenseName());

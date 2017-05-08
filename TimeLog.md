@@ -87,8 +87,12 @@
 | 5/3/17 | Finished implementing Chart API in Jsp |.30|
 | 5/6/17 | Did Polishing in all Jsp |4| |
 | 5/7/17 | TimeLog Fillup |.15| |
-| 4/7/17 | Edited Problem Solution |.5| |
-
+| 5/7/17 | Edited Problem Solution |.5| |
+| 5/8/17 | Added Jdoc and log |.2| |
+| 5/8/17 | Fixed issue in viewExpense and deleteExpense |.20| |
+| 5/8/17 | Fixed server problem |.10| |
+| 5/8/17 | Added Codecoverage and serverlog snapshots |.25| |
+| 5/8/17 | TimeLog Fillup |.5| |
 
 
 
