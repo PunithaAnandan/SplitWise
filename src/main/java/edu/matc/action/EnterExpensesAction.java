@@ -22,6 +22,7 @@ public class EnterExpensesAction extends ActionSupport implements UserAware{
      */
     @Override
     public String execute() throws Exception {
+        log.info("EnterExpensesAction.execute");
         ExpensesDao expensesDao = new ExpensesDao();
         expenses.setEmailId(user.getEmailId());
         expensesDao.addExpense(expenses);
@@ -69,6 +70,10 @@ public class EnterExpensesAction extends ActionSupport implements UserAware{
         }
     }
 
+    /**set User
+     *
+     * @param user
+     */
     @Override
     public void setUser(User user) {
         this.user=user;

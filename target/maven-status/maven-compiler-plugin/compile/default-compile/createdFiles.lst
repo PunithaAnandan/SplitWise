@@ -20,4 +20,3 @@ edu\matc\entity\User.class
 edu\matc\action\EditExpensesAction.class
 edu\matc\entity\Expenses.class
 edu\matc\persistence\SessionFactoryProvider.class
-edu\matc\action\CompareExpensesAction.class

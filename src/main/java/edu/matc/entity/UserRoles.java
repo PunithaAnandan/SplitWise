@@ -18,27 +18,45 @@ public class UserRoles {
     @Column(name = "email_Id")
     private String emailId;
 
-
     @Column(name = "role_name")
     private String roleName;
 
+    /**get EmailId
+     *
+     * @return string
+     */
     public String getEmailId() {
         return emailId;
     }
 
+    /**set EmailId
+     *
+     * @param emailId
+     */
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
 
-
+    /**get RoleName
+     *
+     * @return roleName
+     */
     public String getRoleName() {
         return roleName;
     }
 
+    /**set RoleName
+     *
+     * @param roleName
+     */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
 
+    /**Tostring
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return "UserRoles{" +

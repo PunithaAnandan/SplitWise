@@ -51,10 +51,6 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
         this.expensesList = expensesList;
     }
 
-
-
-
-
     /** Execute Method
      *
      * @return SUCCESS
@@ -70,8 +66,6 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
         expensesList = expensesDao.viewExpense(expenses.getDueDate(), expenses.getEmailId());
         return SUCCESS;
     }
-
-
 
     /** Execute Method
      *

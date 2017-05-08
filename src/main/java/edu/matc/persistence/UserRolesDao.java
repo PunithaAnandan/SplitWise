@@ -10,9 +10,7 @@ import org.hibernate.Transaction;
  * Created by paulawaite on 2/2/16.
  */
 public class UserRolesDao {
-
     private final Logger log = Logger.getLogger(this.getClass());
-
 
     /**
      * add a user
@@ -29,11 +27,10 @@ public class UserRolesDao {
             emailId = (String)session.save(userRoles);
             log.info("UserRolesDao.addUserRole emailId:"+emailId);
             transaction.commit();
-
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return emailId;
@@ -52,11 +49,10 @@ public class UserRolesDao {
             transaction = session.beginTransaction();
             userRoles = (UserRoles) session.get(UserRoles.class, emailId);
             transaction.commit();
-
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return userRoles;

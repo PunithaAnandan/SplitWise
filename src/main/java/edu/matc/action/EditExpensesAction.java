@@ -18,38 +18,66 @@ public class EditExpensesAction extends ActionSupport implements UserAware {
     private String dueDate;
     private String paidDate;
     private Expenses expenses;
-    //private MessageStore messageStore;
 
+
+    /**getAmountDue
+     *
+     * @return amountDue
+     */
     public double getAmountDue() {
         return amountDue;
     }
 
+    /**set AmountDue
+     *
+     * @param amountDue
+     */
     public void setAmountDue(double amountDue) {
         this.amountDue = amountDue;
     }
 
+    /**get DueDate
+     *
+     * @return dueDate
+     */
     public String getDueDate() {
         return dueDate;
     }
 
+    /**set DueDate
+     *
+     * @param dueDate
+     */
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
+    /** getPaidDate
+     *
+     * @return paidDate
+     */
     public String getPaidDate() {
         return paidDate;
     }
 
+    /**set PaidDate
+     *
+     * @param paidDate
+     */
     public void setPaidDate(String paidDate) {
         this.paidDate = paidDate;
     }
 
+    /**execute Method
+     *
+     * @return String
+     * @throws Exception
+     */
+    @Override
     public String execute() throws Exception {
-        System.out.println("EditExpensesAction.execute");
-        System.out.println("EditExpensesAction.execute emailId:"+user.getEmailId());
-        System.out.println("EditExpensesAction.execute expenseName:"+expenseName);
-        // System.out.println("EditExpensesAction.execute expenses.getDueDate():"+expenses.getDueDate());
-        //ExpensesDao expensesDao = new ExpensesDao();
+        log.info("EditExpensesAction.execute");
+        log.info("EditExpensesAction.execute emailId:"+user.getEmailId());
+        log.info("EditExpensesAction.execute expenseName:"+expenseName);
         expenses = new Expenses();
         expenses.setEmailId(user.getEmailId());
         expenses.setExpenseName(expenseName);
@@ -60,22 +88,42 @@ public class EditExpensesAction extends ActionSupport implements UserAware {
     }
 
 
+    /**get ExpenseName
+     *
+     * @return expenseName
+     */
     public String getExpenseName() {
         return expenseName;
     }
 
+    /**set ExpenseName
+     *
+     * @param expenseName
+     */
     public void setExpenseName(String expenseName) {
         this.expenseName = expenseName;
     }
 
+    /**get Expenses
+     *
+     * @return expenses
+     */
     public Expenses getExpenses() {
         return expenses;
     }
 
+    /**set Expenses
+     *
+     * @param expenses
+     */
     public void setExpenses(Expenses expenses) {
         this.expenses = expenses;
     }
 
+    /** set User
+     *
+     * @param user
+     */
     @Override
     public void setUser(User user) {
         this.user=user;

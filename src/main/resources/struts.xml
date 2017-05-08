@@ -85,11 +85,6 @@
             <result name="input">/editSelectedExpense.jsp</result>
         </action>
 
-        <action name="compareExpensesAction"
-                class="edu.matc.action.CompareExpensesAction">
-            <result name="success">/compareYearOrMonth.jsp</result>
-        </action>
-
         <action name="showDeleteExpensesAction"
                 class="edu.matc.action.ShowDeleteExpensesAction">
             <result name="success">/deleteExpense.jsp</result>

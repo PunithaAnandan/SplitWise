@@ -15,7 +15,6 @@ import java.util.List;
 public class ExpensesDao {
     private final Logger log = Logger.getLogger(this.getClass());
 
-
     /**
      * add a user expense
      *
@@ -33,7 +32,6 @@ public class ExpensesDao {
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-            //System.out.println("Hibernate Exception:" + hibernateException.getStackTrace());
         } finally {
             session.close();
         }
@@ -56,20 +54,13 @@ public class ExpensesDao {
         try {
             transaction = session.beginTransaction();
             criteria = session.createCriteria(Expenses.class);
-            //criteria.add(Restrictions.le("dueDate",date));
             criteria.add(Restrictions.sqlRestriction("MONTH(due_date) = ? ", month, StandardBasicTypes.INTEGER));
             criteria.add(Restrictions.eq("emailId",emailId));
             expensesList = criteria.list();
-            /**Criteria cr = session.createCriteria(Employee.class);
-             cr.add(Restrictions.eq("salary", 2000));
-             List results = cr.list();*/
-            // query = "from Expenses where due_date <=:sDate and email_Id =:sEmailId";
-            //expensesList = (ArrayList<Expenses>) session.createQuery(query).setString("sDate",date,"sEmailId",emailId).list();
             transaction.commit();
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-
         } finally {
             session.close();
         }
@@ -93,7 +84,6 @@ public class ExpensesDao {
             inputExpenses.setExpenseName(expenseName);
             expenses = (Expenses) session.get(Expenses.class, inputExpenses);
             transaction.commit();
-
         }catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
@@ -149,7 +139,6 @@ public class ExpensesDao {
         Transaction transaction = null;
         Query query;
         int result =0;
-
         try {
             transaction = session.beginTransaction();
             query = session.createSQLQuery("delete from Expenses " +

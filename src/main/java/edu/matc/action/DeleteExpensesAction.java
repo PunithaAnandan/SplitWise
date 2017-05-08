@@ -18,43 +18,56 @@ public class DeleteExpensesAction extends ActionSupport implements UserAware {
     private String exception;
     private String exceptionStack;
 
+    /**Execute Method
+     *
+     * @return String
+     */
     @Override
     public String execute() {
         ExpensesDao expensesDao = new ExpensesDao();
         expenses.setEmailId(user.getEmailId());
-        System.out.println("DeleteExpensesAction.execute");
-        System.out.println("DeleteExpensesAction.execute emailId:" + user.getEmailId());
-        System.out.println("DeleteExpensesAction.execute expenses.getDueDate():" + expenses.getDueDate());
+        log.info("DeleteExpensesAction.execute");
+        log.info("DeleteExpensesAction.execute emailId:" + user.getEmailId());
+        log.info("DeleteExpensesAction.execute expenses.getDueDate():" + expenses.getDueDate());
         int result=0;
         try {
             result= expensesDao.deleteExpense(expenses);
-        } catch (Exception e) {
-            if (e.getMessage().startsWith("org.hibernate.exception")) {
+        } catch (Exception catchException) {
+            if (catchException.getMessage().startsWith("org.hibernate.exception")) {
                 exception = "Expense Already Exists";
-                exceptionStack = e.toString();
+                exceptionStack = catchException.toString();
             } else {
-                exception = e.getMessage();
-                exceptionStack = e.toString();
+                exception = catchException.getMessage();
+                exceptionStack = catchException.toString();
             }
             return ERROR;
         }
         if(result==0) {
             exception = "There is no expense available to delete";
-            //exceptionStack = e.toString();
             return ERROR;
         }
-
         return SUCCESS;
     }
 
+    /** Get Expenses
+     *
+     * @return expenses
+     */
     public Expenses getExpenses() {
         return expenses;
     }
 
+    /** Set Expenses
+     *
+     * @param expenses
+     */
     public void setExpenses(Expenses expenses) {
         this.expenses = expenses;
     }
 
+    /**
+     * validate Method
+     */
     @Override
     public void validate()
     {
@@ -68,22 +81,42 @@ public class DeleteExpensesAction extends ActionSupport implements UserAware {
         }
     }
 
+    /** getException
+     *
+     * @return exception
+     */
     public String getException() {
         return exception;
     }
 
+    /**set Exception
+     *
+     * @param exception
+     */
     public void setException(String exception) {
         this.exception = exception;
     }
 
+    /**get Exception Stack
+     *
+     * @return exceptionStack
+     */
     public String getExceptionStack() {
         return exceptionStack;
     }
 
+    /** set ExceptionStack
+     *
+     * @param exceptionStack
+     */
     public void setExceptionStack(String exceptionStack) {
         this.exceptionStack = exceptionStack;
     }
 
+    /**set User
+     *
+     * @param user
+     */
     @Override
     public void setUser(User user) {
         this.user=user;

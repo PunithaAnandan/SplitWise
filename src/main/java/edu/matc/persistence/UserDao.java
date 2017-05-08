@@ -13,7 +13,6 @@ import java.util.List;
  * Created by paulawaite on 2/2/16.
  */
 public class UserDao {
-
     private final Logger log = Logger.getLogger(this.getClass());
 
 
@@ -54,7 +53,6 @@ public class UserDao {
             transaction = session.beginTransaction();
             user = (User) session.get(User.class, id);
             transaction.commit();
-
         }catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
@@ -80,7 +78,7 @@ public class UserDao {
             query = "from User where emailId =:sEmailId";
             userList = (ArrayList<User>) session.createQuery(query).setString("sEmailId",emailId).list();
             transaction.commit();
-            if(userList.size()>0){
+            if (userList.size()>0) {
                 user=(User)userList.get(0);
             }
         }catch (HibernateException hibernateException) {

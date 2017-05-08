@@ -143,6 +143,10 @@ public class User {
         this.emailId = emailId;
     }
 
+    /**Tostring method
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return "User{" +

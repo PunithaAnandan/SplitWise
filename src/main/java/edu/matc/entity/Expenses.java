@@ -51,46 +51,90 @@ public class Expenses implements Serializable{
         this.paidDate = paidDate;
     }
 
+    /**get EmailId
+     *
+     * @return emailId
+     */
     public String getEmailId() {
         return emailId;
     }
 
+    /**set EmailId
+     *
+     * @param emailId
+     */
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
 
+    /**get ExpenseName
+     *
+     * @return expenseName
+     */
     public String getExpenseName() {
         return expenseName;
     }
 
+    /**set ExpenseName
+     *
+     * @param expenseName
+     */
     public void setExpenseName(String expenseName) {
         this.expenseName = expenseName;
     }
 
+    /**get AmountDue
+     *
+     * @return amountDue
+     */
     public double getAmountDue() {
         return amountDue;
     }
 
+    /**set AmountDue
+     *
+     * @param amountDue
+     */
     public void setAmountDue(double amountDue) {
         this.amountDue = amountDue;
     }
 
+    /**get DueDate
+     *
+     * @return dueDate
+     */
     public String getDueDate() {
         return dueDate;
     }
 
+    /**set DueDate
+     *
+     * @param dueDate
+     */
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
+    /**get PaidDate
+     *
+     * @return paidDate
+     */
     public String getPaidDate() {
         return paidDate;
     }
 
+    /**set PaidDate
+     *
+     * @param paidDate
+     */
     public void setPaidDate(String paidDate) {
         this.paidDate = paidDate;
     }
 
+    /** ToString method
+     *
+     * @return string
+     */
     @Override
     public String toString() {
         return "Expense{" +

@@ -14,27 +14,40 @@ public class ShowDeleteExpensesAction extends ActionSupport implements UserAware
     private static final long serialVersionUID = 1L;
     private User user;
 
-    //private MessageStore messageStore;
+    /**execute Method
+     *
+     * @return
+     * @throws Exception
+     */
     @Override
     public String execute() throws Exception {
-
-        //messageStore = new MessageStore() ;
-        //log.debug("ShowViewExpensesAction.execute method");
-        System.out.println("ShowDeleteExpensesAction.execute method");
-        //System.out.println("ShowViewExpensesAction.user.getEmailId:"+user.getEmailId());
+        log.info("ShowDeleteExpensesAction.execute method");
         return SUCCESS;
     }
 
 
+    /**set User
+     *
+     * @param user
+     */
     @Override
     public void setUser(User user) {
         this.user=user;
     }
 
+    /**get User
+     *
+     * @param user
+     * @return User
+     */
     public User getUser(User user){
         return this.user;
     }
 
+    /**get Model
+     *
+     * @return User
+     */
     @Override
     public User getModel() {
         return this.user;

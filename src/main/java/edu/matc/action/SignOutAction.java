@@ -15,6 +15,7 @@ public class SignOutAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
+        log.info("SignOutAction.execute");
         Map session = ActionContext.getContext().getSession();
         session.remove("USER");
         return SUCCESS;

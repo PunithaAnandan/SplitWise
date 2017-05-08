@@ -46,7 +46,7 @@ public class ShowEditExpensesAction extends ActionSupport implements UserAware, 
 
     /**get Model
      *
-     * @return
+     * @return User
      */
     @Override
     public User getModel() {

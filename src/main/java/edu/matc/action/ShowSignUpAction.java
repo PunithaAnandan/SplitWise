@@ -40,7 +40,7 @@ public class ShowSignUpAction extends ActionSupport implements SessionAware, Mod
 
     /**get Model
      *
-     * @return
+     * @return User
      */
     @Override
     public User getModel() {
