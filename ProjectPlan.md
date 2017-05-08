@@ -79,11 +79,11 @@ more detail.
 - [X] Create final presentation
 
 ### Week 15
-- [] Time log entries
+- [X] Time log entries
 
 ### Week 16
-- [ ] Time log entries
-- [ ] Final Presentation
+- [X] Time log entries
+- [X] Final Presentation
 
 
 

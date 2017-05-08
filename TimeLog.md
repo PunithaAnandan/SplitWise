@@ -62,6 +62,7 @@
 | 2/20/17 | Added EnterExpense, ViewExpense servlet in web.xml |.5| |
 | 2/21/17 | TimeLog Fillup |.10| |
 | 3/2/17  | Added extracurricular feedback | .25| |
+| 3/2/17  | Group discussion about team Project | 3|
 | 3/8/17  | pulled team project repository | .5| |
 | 3/9/17  | Added DAOs for team project  | 1| |
 | 3/9/17  | finished peers code review partially  | 1| |
@@ -71,7 +72,28 @@
 | 3/11/17 | finished peers code review for susan | 1| |
 | 3/12/17 | finished peers code review for peter | 2| |
 | 3/12/17 | Added feedback for extracurricular presentation |.10| |
-| 3/12/17 | TimeLog Fillup |.10 |
+| 3/12/17 | TimeLog Fillup |.10 | |
+| 3/12 - 4/10 | creating DAOs | 25||
+| 4/9/17 | TimeLog Fillup |.35 ||
+| 4/10/17| Implemented struts in individual Project| 1| |
+| 4/12/17| Implemented struts Authentication |3| |
+| 4/14/17| Added struts UI Tags |.15| |
+| 4/17/17| Added Action for ShowSignUp, SignUp Action |3| |
+| 4/18/17| Added Action for ShowEnterExpense,enterExpense  Action  |1| |
+| 4/19/17| Added Action for ShowEditExpense, EditExpense, EditSelectedExpense Action |2| |
+| 4/21/17| Added Action for ShowViewExpense,viewExpense  Action  |1| |
+| 4/18/17| Added Action for ShowDeleteExpense,deleteExpense  Action  |.15| |
+| 4/26/17| Finished Action Test for all DAOs |1| |
+| 5/3/17 | Finished implementing Chart API in Jsp |.30|
+| 5/6/17 | Did Polishing in all Jsp |4| |
+| 5/7/17 | TimeLog Fillup |.15| |
+| 4/7/17 | Edited Problem Solution |.5| |
+
+
+
+
+
+
 
 
 
