@@ -82,7 +82,7 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
     public void validate()
     {
         log.info("ViewExpensesAction.validate"+ expenses.getDueDate());
-        if (expenses.getDueDate() == null || expenses.getDueDate().trim().equals(" "))
+        if (expenses.getDueDate() == null || expenses.getDueDate().trim().equals(""))
         {
             log.info("ViewExpensesAction.validate statement starts");
             addFieldError("expenses.dueDate","Due Date is required");

@@ -1,7 +1,6 @@
 package edu.matc.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import edu.matc.entity.Expenses;
 import edu.matc.entity.User;
 import edu.matc.interceptors.UserAware;
@@ -11,20 +10,40 @@ import org.apache.log4j.Logger;
 /**
  * Created by Punitha Anandan on 4/27/2017.
  */
-public class DeleteExpensesAction extends ActionSupport implements UserAware, ModelDriven<User> {
+public class DeleteExpensesAction extends ActionSupport implements UserAware {
     private final Logger log = Logger.getLogger(this.getClass());
     private static final long serialVersionUID = 1L;
     private Expenses expenses;
     private User user;
-    //private MessageStore messageStore;
+    private String exception;
+    private String exceptionStack;
 
-    public String execute() throws Exception {
-        System.out.println("DeleteExpensesAction.execute");
-        System.out.println("DeleteExpensesAction.execute emailId:"+user.getEmailId());
-        System.out.println("DeleteExpensesAction.execute expenses.getDueDate():"+expenses.getDueDate());
+    @Override
+    public String execute() {
         ExpensesDao expensesDao = new ExpensesDao();
         expenses.setEmailId(user.getEmailId());
-        expensesDao.deleteExpense(expenses);
+        System.out.println("DeleteExpensesAction.execute");
+        System.out.println("DeleteExpensesAction.execute emailId:" + user.getEmailId());
+        System.out.println("DeleteExpensesAction.execute expenses.getDueDate():" + expenses.getDueDate());
+        int result=0;
+        try {
+            result= expensesDao.deleteExpense(expenses);
+        } catch (Exception e) {
+            if (e.getMessage().startsWith("org.hibernate.exception")) {
+                exception = "Expense Already Exists";
+                exceptionStack = e.toString();
+            } else {
+                exception = e.getMessage();
+                exceptionStack = e.toString();
+            }
+            return ERROR;
+        }
+        if(result==0) {
+            exception = "There is no expense available to delete";
+            //exceptionStack = e.toString();
+            return ERROR;
+        }
+
         return SUCCESS;
     }
 
@@ -36,6 +55,7 @@ public class DeleteExpensesAction extends ActionSupport implements UserAware, Mo
         this.expenses = expenses;
     }
 
+    @Override
     public void validate()
     {
         if (expenses.getExpenseName() == null || expenses.getExpenseName().trim().equals(""))
@@ -48,18 +68,25 @@ public class DeleteExpensesAction extends ActionSupport implements UserAware, Mo
         }
     }
 
+    public String getException() {
+        return exception;
+    }
+
+    public void setException(String exception) {
+        this.exception = exception;
+    }
+
+    public String getExceptionStack() {
+        return exceptionStack;
+    }
+
+    public void setExceptionStack(String exceptionStack) {
+        this.exceptionStack = exceptionStack;
+    }
+
     @Override
     public void setUser(User user) {
         this.user=user;
-    }
-
-    public User getUser(User user){
-        return this.user;
-    }
-
-    @Override
-    public User getModel() {
-        return this.user;
     }
 
 }

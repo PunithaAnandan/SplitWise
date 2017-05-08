@@ -17,10 +17,10 @@
 <c:import url="header.jsp" />
 <div id="content" align="center">
     <p>
-        <h3>View Or Edit your expenses</h3>
-        <s:form action="viewExpensesAction" method="post">
-            <s:textfield label="Select Due date you wish to view :" type="date" name="expenses.dueDate" />
-        <s:submit value="View"/>
+    <h2>View your expense</h2>
+    <s:form action="viewExpensesAction">
+        <s:textfield label="Select due Date you wish to view :" name="expenses.dueDate" type="date"/>
+        <s:submit value="View" />
     </s:form>
 </div>
 <c:import url="footer.jsp" />

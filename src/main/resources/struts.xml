@@ -68,7 +68,7 @@
         <action name="viewExpensesAction"
                 class="edu.matc.action.ViewExpensesAction" method="execute">
             <result name="success">/viewExpenseList.jsp</result>
-            <result name="input">/viewExpenses.jsp</result>
+            <result name="input">/viewExpense.jsp</result>
         </action>
 
         <action name="showEditExpensesAction"

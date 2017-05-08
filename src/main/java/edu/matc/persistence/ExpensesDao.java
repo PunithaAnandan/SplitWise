@@ -4,6 +4,7 @@ import edu.matc.entity.Expenses;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.type.StandardBasicTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,12 +52,19 @@ public class ExpensesDao {
         Criteria criteria = null;
         String query = null;
         List<Expenses> expensesList = new ArrayList<Expenses>();
+        int month=Integer.parseInt(date.substring(5,7));
         try {
             transaction = session.beginTransaction();
             criteria = session.createCriteria(Expenses.class);
-            criteria.add(Restrictions.le("dueDate", date));
-            criteria.add(Restrictions.eq("emailId", emailId));
+            //criteria.add(Restrictions.le("dueDate",date));
+            criteria.add(Restrictions.sqlRestriction("MONTH(due_date) = ? ", month, StandardBasicTypes.INTEGER));
+            criteria.add(Restrictions.eq("emailId",emailId));
             expensesList = criteria.list();
+            /**Criteria cr = session.createCriteria(Employee.class);
+             cr.add(Restrictions.eq("salary", 2000));
+             List results = cr.list();*/
+            // query = "from Expenses where due_date <=:sDate and email_Id =:sEmailId";
+            //expensesList = (ArrayList<Expenses>) session.createQuery(query).setString("sDate",date,"sEmailId",emailId).list();
             transaction.commit();
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
@@ -129,23 +137,36 @@ public class ExpensesDao {
         return result;
     }
 
-    /** delete Expense
+
+    /**Delete Expense
      *
-     * @param expense
+     * @param expenses
+     * @return result
+     * @throws Exception
      */
-    public void deleteExpense(Expenses expense) {
+    public int deleteExpense(Expenses expenses)throws Exception {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
+        Query query;
+        int result =0;
+
         try {
             transaction = session.beginTransaction();
-            session.delete(expense);
+            query = session.createSQLQuery("delete from Expenses " +
+                    " where email_Id = :emailId and expense = :expenseName and due_date = :dueDate ");
+            query.setParameter("emailId", expenses.getEmailId());
+            query.setParameter("expenseName", expenses.getExpenseName());
+            query.setParameter("dueDate", expenses.getDueDate());
+            result = query.executeUpdate();
             transaction.commit();
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
+            throw new Exception(hibernateException);
         } finally {
             session.close();
         }
+        return result;
     }
 }
 
