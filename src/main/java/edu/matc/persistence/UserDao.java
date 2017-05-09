@@ -31,10 +31,10 @@ public class UserDao {
             id = (int)session.save(user);
             transaction.commit();
 
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return id;
@@ -53,10 +53,10 @@ public class UserDao {
             transaction = session.beginTransaction();
             user = (User) session.get(User.class, id);
             transaction.commit();
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return user;
@@ -81,10 +81,10 @@ public class UserDao {
             if (userList.size()>0) {
                 user=(User)userList.get(0);
             }
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return user;

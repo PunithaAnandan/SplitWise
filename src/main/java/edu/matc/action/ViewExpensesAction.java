@@ -19,26 +19,39 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
     private User user;
     private List<Expenses> expensesList;
     private String exception;
+    private String exceptionStack;
 
+    /** get Exception
+     *
+     * @return exception
+     */
     public String getException() {
         return exception;
     }
 
+    /** set Exception
+     *
+     * @param exception
+     */
     public void setException(String exception) {
         this.exception = exception;
     }
 
+    /** get ExceptionStack
+     *
+     * @return exceptionStack
+     */
     public String getExceptionStack() {
         return exceptionStack;
     }
 
+    /** set ExceptionStack
+     *
+     * @param exceptionStack
+     */
     public void setExceptionStack(String exceptionStack) {
         this.exceptionStack = exceptionStack;
     }
-
-    private String exceptionStack;
-
-
 
     /**get Expenses
      *
@@ -86,6 +99,9 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
         int result=0;
         try {
             expenses.setEmailId(user.getEmailId());
+            if(expensesList!=null && expensesList.size()>0) {
+                expensesList.clear();
+            }
             expensesList = expensesDao.viewExpense(expenses.getDueDate(), expenses.getEmailId());
             result=expensesList.size();
             log.info("ViewExpensesAction.execute result:" + result);

@@ -55,6 +55,7 @@ public class ExpensesDao {
             criteria = session.createCriteria(Expenses.class);
             criteria.add(Restrictions.sqlRestriction("MONTH(due_date) = ? ", month, StandardBasicTypes.INTEGER));
             criteria.add(Restrictions.eq("emailId",emailId));
+            query = "from expenses where month(due_date) =:month and email_Id =:emailId";
             expensesList = criteria.list();
             transaction.commit();
         } catch (HibernateException hibernateException) {
@@ -65,9 +66,7 @@ public class ExpensesDao {
             if (transaction != null) transaction.rollback();
             log.error("Exception", e);
             throw e;
-        }
-        finally
-         {
+        } finally {
             session.close();
         }
         return expensesList;
@@ -75,7 +74,8 @@ public class ExpensesDao {
 
     /** Get a expenses for given expenseName
      *
-     * @param expenseName  The name of Expense
+     * @param expenseName
+     * @param emailId
      * @return expenses
      */
     public Expenses getExpense(String emailId, String expenseName) {
@@ -89,10 +89,10 @@ public class ExpensesDao {
             inputExpenses.setExpenseName(expenseName);
             expenses = (Expenses) session.get(Expenses.class, inputExpenses);
             transaction.commit();
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return expenses;
@@ -126,11 +126,11 @@ public class ExpensesDao {
             query.setParameter("paidDate", expenses.getPaidDate());
             result = query.executeUpdate();
             transaction.commit();
-        }catch (HibernateException hibernateException) {
+        } catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
             throw new Exception(hibernateException);
-        }finally {
+        } finally {
             session.close();
         }
         return result;

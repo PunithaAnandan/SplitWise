@@ -22,6 +22,7 @@ public class Expenses implements Serializable{
     @Column(name = "amount")
     private double amountDue;
 
+    @Id
     @Column(name = "due_date")
     private String dueDate;
 

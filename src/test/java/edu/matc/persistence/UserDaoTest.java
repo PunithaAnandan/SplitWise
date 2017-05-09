@@ -37,16 +37,6 @@ public class UserDaoTest {
         assertTrue(userDao.addUser(user)>0);
     }
 
-    /**get UserTest
-     *
-     * @throws Exception
-     */
-    @Test
-    public void getUserTest() throws Exception {
-        User user = userDao.getUser(1);
-        assertTrue(user.getLastName().equalsIgnoreCase("Ram"));
-    }
-
 
     /**getUserByEmailIdTest
      *

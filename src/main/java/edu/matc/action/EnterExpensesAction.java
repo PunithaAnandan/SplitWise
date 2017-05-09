@@ -17,23 +17,37 @@ public class EnterExpensesAction extends ActionSupport implements UserAware{
     private String exception;
     private String exceptionStack;
 
+    /** getException
+     *
+     * @return exception
+     */
     public String getException() {
         return exception;
     }
 
+    /** set Exception
+     *
+     * @param exception
+     */
     public void setException(String exception) {
         this.exception = exception;
     }
 
+    /** get ExceptionStack
+     *
+     * @return exceptionStack
+     */
     public String getExceptionStack() {
         return exceptionStack;
     }
 
+    /** set ExceptionStack
+     *
+     * @param exceptionStack
+     */
     public void setExceptionStack(String exceptionStack) {
         this.exceptionStack = exceptionStack;
     }
-
-
 
     /** Execute Method
      *

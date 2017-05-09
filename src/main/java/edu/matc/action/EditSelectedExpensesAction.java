@@ -17,44 +17,77 @@ public class EditSelectedExpensesAction extends ActionSupport implements UserAwa
     private  String expenseName;
     private String dueDate;
 
+    /** execute Method
+     *
+     * @return String
+     * @throws Exception
+     */
     @Override
     public String execute() throws Exception {
-        System.out.println("EditSelectedExpensesAction.execute");
-        System.out.println("EditSelectedExpensesAction.execute expenseName:"+expenseName);
-        System.out.println("EditSelectedExpensesAction.execute dueDate:"+dueDate);
+        log.info("EditSelectedExpensesAction.execute");
+        log.info("EditSelectedExpensesAction.execute expenseName:"+expenseName);
+        log.info("EditSelectedExpensesAction.execute dueDate:"+dueDate);
         ExpensesDao expensesDao = new ExpensesDao();
         expenses.setEmailId(user.getEmailId());
         expensesDao.updateExpenses(expenses, expenseName,dueDate);
         return SUCCESS;
     }
 
+    /**get Expenses
+     *
+     * @return expenses
+     */
     public Expenses getExpenses() {
         return expenses;
     }
 
+    /**set Expenses
+     *
+     * @param expenses
+     */
     public void setExpenses(Expenses expenses) {
         this.expenses = expenses;
     }
 
+    /**get ExpenseName
+     *
+     * @return expenseName
+     */
     public String getExpenseName() {
         return expenseName;
     }
 
+    /** set ExpenseName
+     *
+     * @param expenseName
+     */
     public void setExpenseName(String expenseName) {
         this.expenseName = expenseName;
     }
 
+    /**get DueDate
+     *
+     * @return dueDate
+     */
     public String getDueDate() {
         return dueDate;
     }
 
+    /**set DueDate
+     *
+     * @param dueDate
+     */
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
+    /** validate Method
+     *
+     */
+    @Override
     public void validate()
     {
-        System.out.println("EditSelectedExpensesAction.validate");
+        log.info("EditSelectedExpensesAction.validate");
         if (expenses.getExpenseName() == null || expenses.getExpenseName().trim().equals(""))
         {
             addFieldError("expenses.expenseName","The expense Name is required");
@@ -73,6 +106,10 @@ public class EditSelectedExpensesAction extends ActionSupport implements UserAwa
         }
     }
 
+    /**set User
+     *
+     * @param user
+     */
     @Override
     public void setUser(User user) {
         this.user=user;
