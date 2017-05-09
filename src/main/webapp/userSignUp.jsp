@@ -15,9 +15,9 @@
             <s:bean name="edu.matc.entity.User" var="user">
                 <s:textfield name="firstName" label="First Name"  type="text"  size="45" />
                 <s:textfield  name="lastName" label="Last Name" type="text" size="45" />
-                <s:password name="password" label="Enter password" type="password"  size="15" />
                 <s:textfield name="emailId" label="E-Mail ID" type="email" size="45" />
-                <s:submit value="Sign In" />
+                <s:password name="password" label="Enter password" type="password"  size="15" />
+                <s:submit value="Sign Up" />
             </s:bean>
 
         </s:form>

@@ -20,22 +20,21 @@ public class ExpensesDao {
      *
      * @param expenses
      */
-    public int addExpense(Expenses expenses) {
+    public void addExpense(Expenses expenses) throws Exception {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
-        int id = 0;
         try {
             transaction = session.beginTransaction();
             session.save(expenses);
             transaction.commit();
-            id=1;
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
+            log.info("Hibernate Exception:" + hibernateException.getStackTrace());
+            throw new Exception(hibernateException);
         } finally {
             session.close();
         }
-        return id;
     }
 
     /**
@@ -44,7 +43,7 @@ public class ExpensesDao {
      * @param date
      * @return expensesList
      */
-    public List<Expenses> viewExpense(String date,String emailId) {
+    public List<Expenses> viewExpense(String date,String emailId) throws Exception {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         Criteria criteria = null;
@@ -61,12 +60,18 @@ public class ExpensesDao {
         } catch (HibernateException hibernateException) {
             if (transaction != null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
-        } finally {
+            throw new Exception(hibernateException);
+        } catch (Exception e) {
+            if (transaction != null) transaction.rollback();
+            log.error("Exception", e);
+            throw e;
+        }
+        finally
+         {
             session.close();
         }
         return expensesList;
     }
-
 
     /** Get a expenses for given expenseName
      *
@@ -95,12 +100,15 @@ public class ExpensesDao {
 
     /** Update the expenses
      *
+
+    /** Update the expenses
+     *
      * @param expenses
      * @param oldExpenseName
      * @param oldDueDate
      * @return result
      */
-    public int updateExpenses(Expenses expenses, String oldExpenseName, String oldDueDate) {
+    public int updateExpenses(Expenses expenses, String oldExpenseName, String oldDueDate) throws Exception {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         int result =0;
@@ -121,6 +129,7 @@ public class ExpensesDao {
         }catch (HibernateException hibernateException) {
             if (transaction!=null) transaction.rollback();
             log.error("Hibernate Exception", hibernateException);
+            throw new Exception(hibernateException);
         }finally {
             session.close();
         }

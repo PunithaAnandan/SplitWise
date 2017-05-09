@@ -14,6 +14,26 @@ public class EnterExpensesAction extends ActionSupport implements UserAware{
     private final Logger log = Logger.getLogger(this.getClass());
     private Expenses expenses;
     private User user;
+    private String exception;
+    private String exceptionStack;
+
+    public String getException() {
+        return exception;
+    }
+
+    public void setException(String exception) {
+        this.exception = exception;
+    }
+
+    public String getExceptionStack() {
+        return exceptionStack;
+    }
+
+    public void setExceptionStack(String exceptionStack) {
+        this.exceptionStack = exceptionStack;
+    }
+
+
 
     /** Execute Method
      *
@@ -21,13 +41,25 @@ public class EnterExpensesAction extends ActionSupport implements UserAware{
      * @throws Exception
      */
     @Override
-    public String execute() throws Exception {
-        log.info("EnterExpensesAction.execute");
+    public String execute() {
         ExpensesDao expensesDao = new ExpensesDao();
         expenses.setEmailId(user.getEmailId());
-        expensesDao.addExpense(expenses);
+        log.info("EnterExpensesAction.execute");
+        try {
+            expensesDao.addExpense(expenses);
+        } catch (Exception actionException){
+            if(actionException.getMessage().startsWith("org.hibernate.exception.ConstraintViolationException")) {
+                exception = "Expense Already Exists";
+                exceptionStack = actionException.toString();
+            } else {
+                exception = actionException.getMessage();
+                exceptionStack = actionException.toString();
+            }
+            return ERROR;
+        }
         return SUCCESS;
     }
+
 
     /**get Expenses
      *

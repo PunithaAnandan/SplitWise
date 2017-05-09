@@ -18,6 +18,27 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
     private Expenses expenses;
     private User user;
     private List<Expenses> expensesList;
+    private String exception;
+
+    public String getException() {
+        return exception;
+    }
+
+    public void setException(String exception) {
+        this.exception = exception;
+    }
+
+    public String getExceptionStack() {
+        return exceptionStack;
+    }
+
+    public void setExceptionStack(String exceptionStack) {
+        this.exceptionStack = exceptionStack;
+    }
+
+    private String exceptionStack;
+
+
 
     /**get Expenses
      *
@@ -62,8 +83,24 @@ public class ViewExpensesAction extends ActionSupport implements UserAware {
         log.info("ViewExpensesAction.execute emailId:" + user.getEmailId());
         log.info("ViewExpensesAction.execute expenses.getDueDate():" + expenses.getDueDate());
         ExpensesDao expensesDao = new ExpensesDao();
-        expenses.setEmailId(user.getEmailId());
-        expensesList = expensesDao.viewExpense(expenses.getDueDate(), expenses.getEmailId());
+        int result=0;
+        try {
+            expenses.setEmailId(user.getEmailId());
+            expensesList = expensesDao.viewExpense(expenses.getDueDate(), expenses.getEmailId());
+            result=expensesList.size();
+            log.info("ViewExpensesAction.execute result:" + result);
+        } catch (Exception catchException) {
+            exception = catchException.getMessage();
+            exceptionStack = catchException.toString();
+            log.info("ViewExpensesAction.execute result:exception:" + exception);
+            return ERROR;
+        }
+        if(result==0) {
+            exception = "There is no expense available to view";
+            exceptionStack="";
+            log.info("ViewExpensesAction.execute result:exception:" + exception);
+            return ERROR;
+        }
         return SUCCESS;
     }
 

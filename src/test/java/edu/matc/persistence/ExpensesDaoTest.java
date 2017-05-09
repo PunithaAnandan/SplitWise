@@ -32,12 +32,13 @@ public class ExpensesDaoTest {
      */
     @Test
     public void addExpenseTest() throws Exception {
-        expenses.setEmailId("tom2@gmail.com");
-        expenses.setExpenseName("Credit Card1");
+        expenses.setEmailId("ram@gmail.com");
+        expenses.setExpenseName("Credit Card2");
         expenses.setAmountDue(700.78);
         expenses.setDueDate("2017-04-17");
         expenses.setPaidDate("2017-04-21");
-        assertTrue(expensesDao.addExpense(expenses)>0);
+        expensesDao.addExpense(expenses);
+        assertTrue(expenses.getDueDate().equals("2017-04-17"));
     }
 
     /**getExpenseTest

@@ -43,7 +43,7 @@ public class UserDaoTest {
      */
     @Test
     public void getUserTest() throws Exception {
-        User user = userDao.getUser(7);
+        User user = userDao.getUser(1);
         assertTrue(user.getLastName().equalsIgnoreCase("Ram"));
     }
 

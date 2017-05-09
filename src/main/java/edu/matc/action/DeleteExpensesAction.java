@@ -34,7 +34,7 @@ public class DeleteExpensesAction extends ActionSupport implements UserAware {
             result= expensesDao.deleteExpense(expenses);
         } catch (Exception catchException) {
             if (catchException.getMessage().startsWith("org.hibernate.exception")) {
-                exception = "Expense Already Exists";
+                exception = "Some other exception";
                 exceptionStack = catchException.toString();
             } else {
                 exception = catchException.getMessage();

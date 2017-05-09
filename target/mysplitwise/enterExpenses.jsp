@@ -20,7 +20,7 @@
     <h3>Enter your expenses</h3>
     <s:form action="enterExpensesAction">
         <s:textfield label="Expense Name" type="text" name="expenses.expenseName" />
-        <s:textfield label="Amount" type="number" name="expenses.amountDue" />
+        <s:textfield label="Amount" type="decimal" name="expenses.amountDue" />
         <s:textfield label="Due Date" type="date" name="expenses.dueDate" />
         <s:textfield label="Paid Date" type="date" name="expenses.paidDate" />
         <s:submit value="Add" />
