@@ -1,4 +1,4 @@
-###Project Technologies/Techniques
+### Project Technologies/Techniques
 
 * Security/Authentication
 	* Admin role: create/read/update/delete (crud) of all data
